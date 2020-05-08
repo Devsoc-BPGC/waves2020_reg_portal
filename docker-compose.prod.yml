@@ -2,10 +2,10 @@ version: '3.7'
 services:
   client:
     stdin_open: true
-    build: 
-      context: ./client
-      dockerfile: Dockerfile.prod
-    image: waves_client
+    # build: 
+    #   context: ./client
+    #   dockerfile: Dockerfile.prod
+    image: ishantgupta777/waves_client
     container_name: waves_client_container
     ports:
       - '80:80'
@@ -15,9 +15,9 @@ services:
       - waves_network
     restart: always
   api:
-    build: 
-      context: ./server
-      dockerfile: Dockerfile.prod
+    # build: 
+    #   context: ./server
+    #   dockerfile: Dockerfile.prod
     image: ishantgupta777/waves_server
     container_name: waves_server_container
     restart: always
