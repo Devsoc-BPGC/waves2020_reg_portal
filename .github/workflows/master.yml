@@ -39,14 +39,29 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
             rm -rf waves2020
-            git clone git@github.com:ishantgupta777/waves2020.git
+            git clone https://github.com/ishantgupta777/waves2020.git
             cd waves2020
-            docker pull ishantgupta777/waves_client
-            docker pull ishantgupta777/waves_server
+            docker rmi $(docker images -q --filter "dangling=true")
+            docker system prune -a
             docker kill $(docker ps -a -q)
             docker rm $(docker ps -a -q)
+            docker pull ishantgupta777/waves_client
+            docker pull ishantgupta777/waves_server
             docker-compose -f docker-compose.prod.yml up --build -d
+            rm -rf /var/www/develop.bitswaves.org/html/*
+            docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/develop.bitswaves.org/html/
 
+
+
+# git fetch --all
+# git reset --hard origin/master
+
+# rm -rf waves2020
+# git clone https://github.com/ishantgupta777/waves2020.git
+
+# docker kill $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
+# docker-compose -f docker-compose.prod.yml up --build -d
 
 
 # docker-compose pull

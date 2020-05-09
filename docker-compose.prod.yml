@@ -8,7 +8,7 @@ services:
     image: ishantgupta777/waves_client
     container_name: waves_client_container
     ports:
-      - '80:80'
+      - '3000:3000'
     depends_on:
       - api
     networks:
@@ -39,7 +39,7 @@ services:
     networks:
       - waves_network
     volumes:
-      - data_mongo:/data/db
+      - ~/data_mongo_waves/db:/data/db
 
   # nginx_service:
   #   image: waves_nginx
