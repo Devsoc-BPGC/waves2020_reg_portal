@@ -10,7 +10,7 @@ services:
     command: npm start
     volumes:
       - ./client/:/usr/src/waves2020/client/
-      - /usr/src/waves2020/client/node_modules
+      - node_modules_client:/usr/src/waves2020/client/node_modules
     ports:
       - '80:3000'
     depends_on:
@@ -30,7 +30,7 @@ services:
     command: npm run server
     volumes:
       - ./server/:/usr/src/waves2020/server/
-      - /usr/src/waves2020/server/node_modules
+      - node_modules_server:/usr/src/waves2020/server/node_modules
     ports:
       - '5000:5000'
     depends_on:
@@ -58,6 +58,7 @@ networks:
     
 volumes:
     data_mongo:
-    node_modules:
+    node_modules_client:
+    node_modules_server:
     web-root:
       driver: local
