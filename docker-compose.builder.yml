@@ -1,0 +1,29 @@
+version: '2'
+
+# All extra commands one might need to run a service can be extended to the base image (Helpful only for commands which make changes to the files.)
+services:
+    base-client:
+        build: 
+            context: ./client
+            dockerfile: Dockerfile
+        volumes:
+            - ./client/:/usr/src/waves2020/client/
+        working_dir: /usr/src/waves2020/client/
+
+    install-packages-client:
+        extends: 
+            service: base-client
+        command: npm install --save-exact
+
+    base-server:
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        volumes:
+            - ./server/:/usr/src/waves2020/server/
+        working_dir: /usr/src/waves2020/server/
+
+    install-packages-server:
+        extends: 
+            service: base-server
+        command: npm install --save-exact
