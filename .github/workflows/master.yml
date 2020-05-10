@@ -38,11 +38,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-            mkdir test
-            cd test
-            rm -rf waves2020
-            git clone https://github.com/devsocbpgc/waves2020.git
             cd waves2020
+            git fetch --all
+            git reset --hard origin/master
             docker rmi $(docker images -q --filter "dangling=true")
             docker system prune -a
             docker kill $(docker ps -a -q)
@@ -50,8 +48,8 @@ jobs:
             docker pull devsocbpgc/waves_client
             docker pull devsocbpgc/waves_server
             docker-compose -f docker-compose.prod.yml up --build -d
-            rm -rf /var/www/develop.bitswaves.org/html/*
-            docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/develop.bitswaves.org/html/
+            rm -rf /var/www/test.bitswaves.org/html/*
+            docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/test.bitswaves.org/html/
 
 
 
