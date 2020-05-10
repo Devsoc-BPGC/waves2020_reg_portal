@@ -14,39 +14,41 @@ jobs:
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
     - name: build docker test file for client
-      run: docker build ./client -t ishantgupta777/waves_client_test
+      run: docker build ./client -t devsocbpgc/waves_client_test
       
     - name: test docker file for client
-      run: docker run ishantgupta777/waves_client_test npm run test:ci
+      run: docker run devsocbpgc/waves_client_test npm run test:ci
 
     - name: build docker prod file for client
-      run: docker build ./client -t ishantgupta777/waves_client -f ./client/Dockerfile.prod
+      run: docker build ./client -t devsocbpgc/waves_client -f ./client/Dockerfile.prod
 
     - name: build docker prod file for server
-      run: docker build ./server -t ishantgupta777/waves_server -f ./server/Dockerfile.prod
+      run: docker build ./server -t devsocbpgc/waves_server -f ./server/Dockerfile.prod
 
     - name: push to docker hub
       run: |
-        docker push ishantgupta777/waves_client
-        docker push ishantgupta777/waves_server
+        docker push devsocbpgc/waves_client
+        docker push devsocbpgc/waves_server
 
     - name: deploying to servers
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.MY_SERVER_HOST }}
+        host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
+            mkdir test
+            cd test
             rm -rf waves2020
-            git clone https://github.com/ishantgupta777/waves2020.git
+            git clone https://github.com/devsocbpgc/waves2020.git
             cd waves2020
             docker rmi $(docker images -q --filter "dangling=true")
             docker system prune -a
             docker kill $(docker ps -a -q)
             docker rm $(docker ps -a -q)
-            docker pull ishantgupta777/waves_client
-            docker pull ishantgupta777/waves_server
+            docker pull devsocbpgc/waves_client
+            docker pull devsocbpgc/waves_server
             docker-compose -f docker-compose.prod.yml up --build -d
             rm -rf /var/www/develop.bitswaves.org/html/*
             docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/develop.bitswaves.org/html/
