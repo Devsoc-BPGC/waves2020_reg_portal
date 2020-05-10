@@ -1,4 +1,4 @@
-APP_NAME=generic-services-api
+APP_NAME=waves2020
 # Figure out a way to put all of this in package.json
 
 run:
