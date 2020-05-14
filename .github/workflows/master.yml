@@ -43,10 +43,9 @@ jobs:
             git reset --hard origin/master
             docker rmi $(docker images -q --filter "dangling=true")
             docker system prune -a
-            docker kill $(docker ps -a -q)
-            docker rm $(docker ps -a -q)
             docker pull devsocbpgc/waves_client
             docker pull devsocbpgc/waves_server
+            docker-compose down
             docker-compose -f docker-compose.prod.yml up --build -d
             rm -rf /var/www/test.bitswaves.org/html/*
             docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/test.bitswaves.org/html/
