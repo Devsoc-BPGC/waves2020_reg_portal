@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-WORKDIR /usr/src/waves2020/client/
+WORKDIR /usr/src/waves2020_reg_portal/client/
 
 COPY ./package*.json ./
 RUN npm install

@@ -1,4 +1,4 @@
-APP_NAME=waves2020
+APP_NAME=waves2020_reg_portal
 # Figure out a way to put all of this in package.json
 
 run:
@@ -36,7 +36,7 @@ logs:
 
 # Database.
 db-connect:
-	docker exec -it waves_mongo_container mongo
+	docker exec -it waves_mongo_reg_portal_container mongo
 
 # Builds
 docker-build:

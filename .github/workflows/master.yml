@@ -1,4 +1,4 @@
-name: client_test using docker
+name: client_test using docker and deploying to server
 
 on:
   push:
@@ -14,21 +14,21 @@ jobs:
       run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
     - name: build docker test file for client
-      run: docker build ./client -t devsocbpgc/waves_client_test
+      run: docker build ./client -t devsocbpgc/waves_client_test_reg_portal
       
     - name: test docker file for client
-      run: docker run devsocbpgc/waves_client_test npm run test:ci
+      run: docker run devsocbpgc/waves_client_test_reg_portal npm run test:ci
 
     - name: build docker prod file for client
-      run: docker build ./client -t devsocbpgc/waves_client -f ./client/Dockerfile.prod
+      run: docker build ./client -t devsocbpgc/waves_client_reg_portal -f ./client/Dockerfile.prod
 
     - name: build docker prod file for server
-      run: docker build ./server -t devsocbpgc/waves_server -f ./server/Dockerfile.prod
+      run: docker build ./server -t devsocbpgc/waves_server_reg_portal -f ./server/Dockerfile.prod
 
     - name: push to docker hub
       run: |
-        docker push devsocbpgc/waves_client
-        docker push devsocbpgc/waves_server
+        docker push devsocbpgc/waves_client_reg_portal
+        docker push devsocbpgc/waves_server_reg_portal
 
     - name: deploying to servers
       uses: appleboy/ssh-action@master
@@ -38,17 +38,17 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-            cd waves2020
+            cd waves2020_reg_portal
             git fetch --all
             git reset --hard origin/master
             docker rmi $(docker images -q --filter "dangling=true")
             docker system prune -a
-            docker pull devsocbpgc/waves_client
-            docker pull devsocbpgc/waves_server
+            docker pull devsocbpgc/waves_client_reg_portal
+            docker pull devsocbpgc/waves_server_reg_portal
             docker-compose down
             docker-compose -f docker-compose.prod.yml up --build -d
-            rm -rf /var/www/test.bitswaves.org/html/*
-            docker cp waves_client_container:/usr/src/waves2020/client/build/. /var/www/test.bitswaves.org/html/
+            rm -rf /var/www/register.bitswaves.org/html/*
+            docker cp waves_client_reg_portal_container:/usr/src/waves2020_reg_portal/client/build/. /var/www/register.bitswaves.org/html/
 
 
 

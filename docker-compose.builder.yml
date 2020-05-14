@@ -7,8 +7,8 @@ services:
             context: ./client
             dockerfile: Dockerfile
         volumes:
-            - ./client/:/usr/src/waves2020/client/
-        working_dir: /usr/src/waves2020/client/
+            - ./client/:/usr/src/waves2020_reg_portal/client/
+        working_dir: /usr/src/waves2020_reg_portal/client/
 
     install-packages-client:
         extends: 
@@ -20,8 +20,8 @@ services:
             context: ./server
             dockerfile: Dockerfile
         volumes:
-            - ./server/:/usr/src/waves2020/server/
-        working_dir: /usr/src/waves2020/server/
+            - ./server/:/usr/src/waves2020_reg_portal/server/
+        working_dir: /usr/src/waves2020_reg_portal/server/
 
     install-packages-server:
         extends: 

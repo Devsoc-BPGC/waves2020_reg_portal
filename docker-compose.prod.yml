@@ -1,45 +1,45 @@
 version: '3.7'
 services:
-  client:
+  client_reg_portal:
     stdin_open: true
     # build: 
     #   context: ./client
     #   dockerfile: Dockerfile.prod
-    image: devsocbpgc/waves_client
-    container_name: waves_client_container
+    image: devsocbpgc/waves_client_reg_portal
+    container_name: waves_client_reg_portal_container
     ports:
-      - '3010:3000'
+      - '3020:3000'
     depends_on:
-      - api
+      - api_reg_portal
     networks:
-      - waves_network
+      - waves_network_reg_portal
     restart: always
-  api:
+  api_reg_portal:
     # build: 
     #   context: ./server
     #   dockerfile: Dockerfile.prod
-    image: devsocbpgc/waves_server
-    container_name: waves_server_container
+    image: devsocbpgc/waves_server_reg_portal
+    container_name: waves_server_reg_portal_container
     restart: always
     command: npm run server
     ports:
-      - '5010:5000'
+      - '5020:5000'
     depends_on:
-      - mongo
+      - mongo_reg_portal
     environment:
-      - MONGO_URL=mongodb://mongo:27017/waves2020
+      - MONGO_URL=mongodb://mongo_reg_portal:27017/waves2020_reg_portal
     networks:
-      - waves_network 
-  mongo:
+      - waves_network_reg_portal
+  mongo_reg_portal:
     image: mongo
     restart: always
-    container_name: waves_mongo_container
+    container_name: waves_mongo_reg_portal_container
     ports:
-      - '27018:27017'
+      - '27019:27017'
     networks:
-      - waves_network
+      - waves_network_reg_portal
     volumes:
-      - ~/data_mongo_waves/db:/data/db
+      - ~/data_mongo_waves_reg_portal/db:/data/db
 
   # nginx_service:
   #   image: waves_nginx
@@ -54,11 +54,10 @@ services:
   #     - api
 
 networks:
-  waves_network:
+  waves_network_reg_portal:
       driver: bridge
     
 volumes:
-    data_mongo:
     node_modules:
     web-root:
       driver: local
