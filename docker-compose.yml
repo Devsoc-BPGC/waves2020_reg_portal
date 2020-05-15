@@ -14,13 +14,13 @@ services:
     ports:
       - '80:3000'
     depends_on:
-      - api
+      - api_reg_portal
     environment:
       - CHOKIDAR_USEPOLLING=true
     networks:
       - waves_network
     restart: always
-  api:
+  api_reg_portal:
     build:
       context: ./server
       dockerfile: Dockerfile
