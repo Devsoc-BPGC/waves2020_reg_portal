@@ -1,0 +1,31 @@
+@use 'base';
+@import 'variables';
+
+@font-face {
+  font-family: 'headings-font';
+  font-weight: bold;
+  src: url('./../fonts/GT America Extended Bold.ttf');
+}
+
+div.adj-heading {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: translate(0, -25%);
+  line-height: 6rem;
+  color: #ebebfc;
+  padding-left: 1rem;
+
+  @media screen and (max-width: $phoneWidth) {
+    line-height: 2.7rem;
+  }
+
+  span {
+    font-size: 8rem;
+    font-family: 'headings-font';
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 3.5rem;
+    }
+  }
+}
