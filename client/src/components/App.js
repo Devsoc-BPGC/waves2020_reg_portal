@@ -3,11 +3,17 @@
 // ==========================================================
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import Footer from './Footer/Footer';
 
 // ==========================================================
-//  RENDERING APP
+//  EXPORTING APP
 // ==========================================================
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default () => {
+  return (
+    <div>
+      Hello
+      <Footer />
+    </div>
+  );
+};

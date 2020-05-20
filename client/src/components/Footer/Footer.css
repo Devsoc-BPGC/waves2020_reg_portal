@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Circular;
+  src: url("../../fonts/CircularStd-Black.woff");
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: 1%;
+  padding-top: 2%;
+  background-color: #2f0B4B;
+  width: 100%;
+}
+
+.footer .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .top .right {
+  padding-right: 5%;
+  padding-top: 1%;
+}
+
+.footer .footer_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  margin-top: -2.5%;
+  left: 0;
+  padding: 2%;
+}
+
+.footer .footer_info .col {
+  color: white;
+  font-family: 'Circular';
+  padding-right: 7.5%;
+}
+
+.footer .footer_info .col .head {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.footer .footer_info .col .list {
+  font-size: 16px;
+  padding: 5% !important;
+  line-height: 20px;
+  width: 100%;
+}
+/*# sourceMappingURL=Footer.css.map */
