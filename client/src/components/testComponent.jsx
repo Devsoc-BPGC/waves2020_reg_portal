@@ -37,9 +37,9 @@ export default function TestComponent() {
         Add name
       </button>
       <ul>
-        {names.map(name => {
-          return <li key={name._id}>{name.name}</li>;
-        })}
+        {names.map(name => (
+          <li key={name._id}>{name.name}</li>
+        ))}
       </ul>
     </div>
   );
