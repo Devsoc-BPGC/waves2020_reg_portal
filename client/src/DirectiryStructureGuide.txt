@@ -1,0 +1,26 @@
+////////////////////////////// <DEMO> /////////////////////////////////////
+src:
+  pages:
+    # all the pages here
+  components:
+    component1:
+      component1-subcomponent1:
+      component1-subcomponent2:
+    component2:
+      component2-subcomponent1:
+      component2-subcomponent2:
+
+
+
+
+In general follow this guideline:
+Parent Folder:
+    Child:
+    Child:
+        Child Of Child:
+    Child:
+
+////////////////////////////// </DEMO> ////////////////////////////////////
+
+//////////////////////////////// <CurrentStructure> ////////////////////////
+
