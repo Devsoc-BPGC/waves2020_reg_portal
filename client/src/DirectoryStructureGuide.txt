@@ -1,26 +1,27 @@
 ////////////////////////////// <DEMO> /////////////////////////////////////
-src:
-  pages:
-    # all the pages here
-  components:
-    component1:
-      component1-subcomponent1:
-      component1-subcomponent2:
-    component2:
-      component2-subcomponent1:
-      component2-subcomponent2:
-
-
-
-
 In general follow this guideline:
 Parent Folder:
     Child:
     Child:
         Child Of Child:
     Child:
-
 ////////////////////////////// </DEMO> ////////////////////////////////////
 
 //////////////////////////////// <CurrentStructure> ////////////////////////
 
+src:
+  pages: # has all the main pages
+  components:
+    PageHeader:
+      PageHeading:
+      <Further components>:
+    PageBody:
+      <further components>:
+    PageFooter:
+      <Further components>:
+    
+    Common Components:
+      <components shared among different pages etc.>:
+  public:
+    font:
+      <all the fonts packages>
