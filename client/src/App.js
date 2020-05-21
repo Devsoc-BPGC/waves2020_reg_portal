@@ -1,7 +1,10 @@
 import React from 'react';
+import Footer from './components/footer/Footer';
 
-function App() {
-  return <div>APP</div>;
-}
-
-export default App;
+export default () => {
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
+};
