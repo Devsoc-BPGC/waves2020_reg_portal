@@ -4,7 +4,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import '../fonts/Font.css';
+import '../fonts/Font.scss';
 
 // =========================================================
 // DEFINING STYLES

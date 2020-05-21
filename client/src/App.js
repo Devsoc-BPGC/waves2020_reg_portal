@@ -3,7 +3,7 @@
 // ==========================================================
 
 import React from 'react';
-import Footer from './components/Footer/Footer';
+import Footer from './components/footer/Footer';
 
 // ==========================================================
 //  EXPORTING APP
@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer';
 export default () => {
   return (
     <div>
-      Hello
       <Footer />
     </div>
   );

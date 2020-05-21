@@ -3,9 +3,9 @@
 // ==========================================================
 
 import React from 'react';
-import './Footer.css';
+import './Footer.scss';
 import OutlineText from '../microcomponents/OutlineText';
-import '../fonts/Font.css';
+import '../fonts/Font.scss';
 
 // ==========================================================
 //  EXPORTING APP
