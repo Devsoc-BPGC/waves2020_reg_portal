@@ -98,7 +98,7 @@ div.main-page-header {
       bottom: min(calc(#{$font-size/2}), calc(#{$font-size-alt/2}));
 
       color: rgba(0, 0, 0, 0);
-      -webkit-text-stroke: calc(#{$font-size-2020/80}) white;
+      -webkit-text-stroke: calc(#{$font-size-2020/30}) white;
 
       font-size: min($font-size, $font-size-alt);
       font-family: 'main-page-font-2020';

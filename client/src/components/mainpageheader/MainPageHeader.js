@@ -24,10 +24,14 @@ export default () => {
       </div>
       <div className='main-page-social-links'>
         <span>
-          <img src={fbLogo} alt='fb logo' />
+          <a href='#/' target='blank'>
+            <img src={fbLogo} alt='fb link' />
+          </a>
         </span>
         <span>
-          <img src={instaLogo} alt='insta logo' />
+          <a href='#/' target='blank'>
+            <img src={instaLogo} alt='insta link' />
+          </a>
         </span>
       </div>
       <div className='main-page-menu-button'>
