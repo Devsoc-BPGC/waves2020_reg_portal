@@ -1,0 +1,31 @@
+@use './../scss/base';
+@import './../scss/variables';
+
+div.commonPageHeader {
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  background-color: #2f0b4b;
+
+  div.commonPageHeader-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+
+    div::after {
+      content: 'MENU →';
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 2rem;
+
+      div::after {
+        content: '≡';
+      }
+      div {
+        font-weight: lighter;
+      }
+    }
+  }
+}

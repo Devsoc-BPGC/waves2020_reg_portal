@@ -1,5 +1,5 @@
-@use './../base';
-@import './../variables';
+@use './../scss/base';
+@import './../scss/variables';
 
 @function min($numbers...) {
   @return m#{i}n(#{$numbers});

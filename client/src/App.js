@@ -1,5 +1,5 @@
 import React from 'react';
-import RegistrationPage from './pages/registrationPage';
+import RegistrationPage from './pages/RegistrationPage';
 
 function App() {
   return <RegistrationPage />;

@@ -1,0 +1,21 @@
+@use './../../scss/base';
+@import './../../scss/variables';
+
+div.general-menu-button {
+  font-size: 3rem;
+
+  div::after {
+    content: 'MENU →';
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 2rem;
+
+    div::after {
+      content: '≡';
+    }
+    div {
+      font-weight: lighter;
+    }
+  }
+}
