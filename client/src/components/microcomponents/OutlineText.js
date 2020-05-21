@@ -4,13 +4,14 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import '../fonts/Font.css';
 
 // =========================================================
 // DEFINING STYLES
 // =========================================================
 
 const Outline = styled.div`
-  font-family: Circular Std;
+  font-family: Circular;
   font-weight: 900;
   font-style: italic;
   font-weight: 900;
@@ -26,7 +27,9 @@ const Outline = styled.div`
 export default props => {
   const { text, color, size, weight } = props;
   return (
-    <Outline style={{ color: color, fontSize: size, fontWeight: weight }}>
+    <Outline
+      style={{ color: color, fontSize: size, WebkitTextStrokeWidth: weight }}
+    >
       {text}
     </Outline>
   );

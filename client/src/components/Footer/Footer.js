@@ -5,6 +5,7 @@
 import React from 'react';
 import './Footer.css';
 import OutlineText from '../microcomponents/OutlineText';
+import '../fonts/Font.css';
 
 // ==========================================================
 //  EXPORTING APP
@@ -14,9 +15,14 @@ export default () => {
   return (
     <div className='footer'>
       <div className='top'>
-        <OutlineText color='#FF6DF0' text='DETAILS' size='500%' />
+        <OutlineText color='#FF6DF0' text='DETAILS' size='700%' />
         <div className='right'>
-          <OutlineText color='#FF6DF0' text='WAVES20' size='250%' weight='10' />
+          <OutlineText
+            color='#FF6DF0'
+            text='WAVES20'
+            size='175%'
+            weight='0.75px'
+          />
         </div>
       </div>
       <div className='footer_info'>
