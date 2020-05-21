@@ -1,0 +1,29 @@
+////////////////////////////// <DEMO> /////////////////////////////////////
+In general follow this guideline:
+Parent Folder:
+    Child:
+    Child:
+        Child Of Child:
+    Child:
+////////////////////////////// </DEMO> ////////////////////////////////////
+
+//////////////////////////////// <CurrentStructure> ////////////////////////
+
+root_folder:
+  public: #all static files and those not required while building the src will go there
+  src:
+    pages: # has all the main pages
+    components:
+      PageHeader:
+        PageHeading:
+        <Further components>:
+      PageBody:
+        <further components>:
+      PageFooter:
+        <Further components>:
+      
+      Common Components:
+        <components shared among different pages etc.>:
+    public:
+      font:
+        <all the fonts packages>
