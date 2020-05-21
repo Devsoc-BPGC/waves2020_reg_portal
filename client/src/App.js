@@ -1,8 +1,14 @@
 import React from 'react';
-import RegistrationPage from './pages/RegistrationPage';
+import MainPageHeader from './components/mainpageheader/MainPageHeader';
+import Footer from './components/footer/Footer';
 
 function App() {
-  return <RegistrationPage />;
+  return (
+    <>
+      <MainPageHeader />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
