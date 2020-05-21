@@ -1,0 +1,213 @@
+@use './../base';
+@import './../variables';
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+$header-padding: 2rem;
+// $font-size: 30rem;
+$font-size: 65vh;
+$font-size-alt: 45vw;
+// $font-size-2020: 17rem;
+$font-size-2020: 36vh;
+$font-size-2020-alt: 17.7vw;
+$font-size-small: 40vh;
+$font-size-small-alt: 25vw;
+$font-size-tablet: $font-size-alt;
+$font-size-2020-tablet: $font-size-small-alt;
+
+$bottom-padding: 25vh;
+
+@font-face {
+  font-family: 'main-page-font';
+  src: url('./../../fonts/Bebas_Neue/BebasNeue-Regular.ttf');
+}
+@font-face {
+  font-family: 'main-page-font-2020';
+  src: url('./../../fonts/CircularStd/CircularStd-MediumItalic.ttf');
+}
+@font-face {
+  font-family: 'main-page-day-date-font';
+  src: url('./../../fonts/GT\ America\ Extended\ Bold.ttf');
+}
+@mixin div-phone-props {
+  position: absolute;
+  right: initial;
+  bottom: initial;
+  top: calc(#{$header-padding * 2});
+  left: calc(#{$header-padding/2});
+
+  font-size: $font-size-small;
+  line-height: calc(#{$font-size-small * (2 / 3)});
+}
+
+div.main-page-header {
+  letter-spacing: -1rem; // minor decorative adjustment
+  height: 100vh;
+  position: relative;
+  background-color: #2f0b4b;
+
+  color: #ff6df0;
+  font-family: 'main-page-font';
+
+  line-height: 0; // so that we can custom adjust it
+
+  @media screen and (max-width: $phoneWidth) {
+    height: 100vh;
+  }
+
+  div.main-page-header-main-text {
+    div {
+      position: absolute;
+      right: $header-padding;
+      bottom: min(calc(#{$font-size/2}), calc(#{$font-size-alt/2}));
+      font-size: min($font-size, $font-size-alt);
+
+      // tablet
+      @media screen and (max-width: $tabletWidth) {
+        bottom: $header-padding;
+
+        font-size: $font-size-tablet;
+        line-height: calc(#{$font-size-tablet * (2 / 3)});
+      }
+      @media screen and (max-width: $phoneWidth) {
+        @include div-phone-props;
+      }
+
+      span {
+        display: inline;
+
+        @media screen and (max-width: $phoneWidth) {
+          display: block;
+        }
+      }
+    }
+
+    div:nth-child(1) > span:nth-child(3)::after {
+      @media screen and (max-width: $phoneWidth) {
+        content: '20';
+      }
+    }
+
+    // this is the div with 2020 written in
+    div:nth-child(2) {
+      bottom: min(calc(#{$font-size/2}), calc(#{$font-size-alt/2}));
+
+      color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke: calc(#{$font-size-2020/80}) white;
+
+      font-size: min($font-size, $font-size-alt);
+      font-family: 'main-page-font-2020';
+
+      transform: scale(0.5)
+        translate(50%, min(calc(#{$font-size/2}*(0.6)), calc(#{$font-size-alt/2}*(0.6)))); //, {$header-padding});
+
+      @media screen and (max-width: $tabletWidth) {
+        bottom: calc(#{$header-padding + $header-padding/4});
+        transform: initial;
+
+        font-size: $font-size-2020-tablet;
+        line-height: calc(#{$font-size-2020-tablet * (2 / 3)});
+      }
+      @media screen and (max-width: $phoneWidth) {
+        visibility: hidden;
+      }
+    }
+
+    div:nth-child(2)::after {
+      content: '2020';
+
+      @media screen and (max-width: $phoneWidth) {
+        content: '';
+      }
+    }
+  }
+
+  div.main-page-day-date {
+    position: absolute;
+    top: $header-padding;
+    left: $header-padding;
+
+    letter-spacing: initial;
+    line-height: initial;
+
+    color: #ebebfc;
+    font-family: 'main-page-day-date-font';
+
+    @media screen and (max-width: $phoneWidth) {
+      top: initial;
+      left: initial;
+      bottom: $header-padding;
+      right: $header-padding;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  div.main-page-social-links {
+    position: absolute;
+    top: initial;
+    right: initial;
+    bottom: $header-padding;
+    left: $header-padding;
+
+    letter-spacing: initial;
+    line-height: initial;
+
+    color: #ebebfc;
+    font-family: initial;
+
+    @media screen and (max-width: $phoneWidth) {
+      visibility: hidden;
+    }
+
+    span {
+      display: inline-block;
+      margin-right: 2rem;
+
+      img {
+        width: 35px;
+      }
+    }
+  }
+
+  div.main-page-menu-button {
+    position: absolute;
+    top: $header-padding;
+    right: $header-padding;
+    left: initial;
+    bottom: initial;
+
+    letter-spacing: initial;
+    line-height: initial;
+
+    color: #ebebfc;
+    font-family: initial;
+
+    span:nth-child(1) {
+      visibility: visible;
+    }
+    span:nth-child(2) {
+      visibility: hidden;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      span:nth-child(1) {
+        visibility: hidden;
+      }
+      span:nth-child(2) {
+        visibility: visible;
+      }
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+}

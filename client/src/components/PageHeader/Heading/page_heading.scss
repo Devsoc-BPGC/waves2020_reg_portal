@@ -1,0 +1,37 @@
+@use '../../base';
+@import '../../variables';
+
+@font-face {
+  font-family: 'headings-font';
+  font-weight: bold;
+  src: url('./../../../fonts/GT\ America\ Extended\ Bold.ttf');
+}
+
+$left-padding: 1rem;
+$font-size: 8rem;
+$font-size-small: 3.5rem;
+$line-height: 3.2rem;
+$line-height-small: 1.7rem;
+
+div.page-heading {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 75%);
+  line-height: $line-height;
+  color: #ebebfc;
+  padding-left: $left-padding;
+
+  @media screen and (max-width: $phoneWidth) {
+    line-height: $line-height-small;
+  }
+
+  span {
+    font-size: $font-size;
+    font-family: 'headings-font';
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: $font-size-small;
+    }
+  }
+}
