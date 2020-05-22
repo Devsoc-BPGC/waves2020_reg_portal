@@ -53,7 +53,7 @@ $bottom-prop-heading-waves-phone: initial;
   }
 }
 @keyframes anim-2020-heading-tablet {
-  from {
+  0% {
     bottom: -100%;
     opacity: 0;
   }
@@ -61,7 +61,7 @@ $bottom-prop-heading-waves-phone: initial;
     bottom: -100%;
     opacity: 0;
   }
-  to {
+  100% {
     bottom: $bottom-prop-heading-2020-tablet;
     opacity: 1;
   }
@@ -97,6 +97,9 @@ $bottom-prop-heading-waves-phone: initial;
     opacity: 1;
   }
 }
+
+$anim-2020-duration: 1s;
+$anim-waves-duration: 0.5s;
 ////////////////////////////////////
 
 @font-face {
@@ -145,7 +148,7 @@ div.main-page-header {
       bottom: $bottom-prop-heading-waves;
       font-size: min($font-size, $font-size-alt);
 
-      animation: anim-waves-heading 1s ease;
+      animation: anim-waves-heading $anim-waves-duration ease;
 
       // tablet
       @media screen and (max-width: $tabletWidth) {
@@ -154,7 +157,7 @@ div.main-page-header {
         font-size: $font-size-tablet;
         line-height: calc(#{$font-size-tablet * (2 / 3)});
 
-        animation: anim-waves-heading-tablet 1s ease;
+        animation: anim-waves-heading-tablet $anim-waves-duration ease;
       }
       @media screen and (max-width: $phoneWidth) {
         position: absolute;
@@ -166,7 +169,7 @@ div.main-page-header {
         font-size: $font-size-small;
         line-height: calc(#{$font-size-small * (2 / 3)});
 
-        animation: anim-waves-heading-phone 1s ease;
+        animation: anim-waves-heading-phone 3s ease;
       }
 
       span {
@@ -200,7 +203,7 @@ div.main-page-header {
           min(calc(#{$font-size/2}* (0.6)), calc(#{$font-size-alt/2}* (0.6)))
         );
 
-      animation: anim-2020-heading 2s ease;
+      animation: anim-2020-heading $anim-2020-duration ease;
 
       @media screen and (max-width: $tabletWidth) {
         bottom: $bottom-prop-heading-2020-tablet;
@@ -209,7 +212,7 @@ div.main-page-header {
         font-size: $font-size-2020-tablet;
         line-height: calc(#{$font-size-2020-tablet * (2 / 3)});
 
-        animation: anim-2020-heading-tablet 2s ease;
+        animation: anim-2020-heading-tablet $anim-2020-duration ease;
       }
       @media screen and (max-width: $phoneWidth) {
         visibility: hidden;
