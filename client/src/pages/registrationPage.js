@@ -7,6 +7,8 @@ import Footer from '../components/footer/Footer';
 export default () => {
   return (
     <div>
+      {/* <PageHeader heading1='REG' heading2='ISTER' /> */}
+
       <MainPageHeader />
       <Footer />
     </div>
