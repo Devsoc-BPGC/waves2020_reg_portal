@@ -92,6 +92,11 @@ div.main-page-header {
         content: '20';
       }
     }
+    div:nth-child(1) > span:nth-child(3) {
+      @media screen and (max-width: $phoneWidth) {
+        overflow: hidden;
+      }
+    }
 
     // this is the div with 2020 written in
     div:nth-child(2) {
