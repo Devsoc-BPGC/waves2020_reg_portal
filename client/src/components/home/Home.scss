@@ -5,12 +5,15 @@
     margin: 0;
     padding-bottom: 5%;
 
-    .events {
-        font-size: 500%;
+    .text {
+        position: absolute;
+        font-family: GT America;
+        font-size: 24px;
+        z-index: 3;
+        top: 10%;
+        left: 5%;
+        width: 20%;
         color: white;
-        font-family: Circular;
-        font-style: italic;
-
-
+        background-color: #FF6DF0;
     }
 }

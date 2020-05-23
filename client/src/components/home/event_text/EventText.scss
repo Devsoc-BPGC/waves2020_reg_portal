@@ -1,10 +1,14 @@
 .event {
-    margin-top: -10%;
+    padding-top: -10%;
+    font-family: Circular;
+    font-style: italic;
 
     .title {
-        transform: translate(40%, 100%);
-        font-size: 200%;
+        position: absolute;
+        top: 20.8%;
+        font-size: 1000%;
         width: fit-content;
+        height: fit-content;
         color: #2f0B4B;
         transition: 0.5s ease-out;
         z-index: 1;
@@ -12,25 +16,27 @@
     }
 
     .item {
+        font-size: 500%;
+        color: white;
         white-space: nowrap;
         padding-left: 10%;
         padding-right: 0;
         padding-top: 0;
         padding-bottom: 0;
         transition: 0.5s ease-out;
+        z-index: 0;
         cursor: pointer;
     }
 
-    .item:hover {
-        transition: 0.5s ease-out;
-    }
+
 
     .title:hover {
         ~.item {
-    transform: translate(10%, 0);
-    z-index: -10;
-}
-        transform: translate(37.5%, 100%);
+            transform: translate(10%, 0);
+            z-index: -10;
+        }
+
+        transform: translate(-17.5%, 0);
 
 
 
