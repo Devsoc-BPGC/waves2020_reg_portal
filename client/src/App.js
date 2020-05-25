@@ -1,13 +1,11 @@
 import React from 'react';
-import MainPageHeader from './components/mainpageheader/MainPageHeader';
-import Footer from './components/footer/Footer';
+import HomePage from './pages/homepage/HomePage';
 
 function App() {
   return (
-    <>
-      <MainPageHeader />
-      <Footer />
-    </>
+    <div>
+      <HomePage />
+    </div>
   );
 }
 

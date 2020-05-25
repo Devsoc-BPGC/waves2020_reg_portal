@@ -1,0 +1,60 @@
+    .test {
+        height: 150px;
+    }
+
+    .event {
+        padding-top: -10%;
+        font-family: Circular;
+        font-style: italic;
+
+        .title {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            font-size: 1000%;
+            width: fit-content;
+            height: fit-content;
+            color: #2f0B4B;
+            transition: 0.5s ease-out;
+            z-index: 1;
+            cursor: pointer;
+
+            @media screen and (max-width: 1850px) {
+                font-size: 800%;
+            }
+        }
+
+        .item {
+            font-size: 500%;
+            color: white;
+            white-space: nowrap;
+            position: relative;
+            top: -100%;
+            padding-left: 10%;
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            transition: 0.5s ease-out;
+            z-index: 0;
+            cursor: pointer;
+
+            @media screen and (max-width: 1850px) {
+                font-size: 400%;
+            }
+        }
+
+
+
+        // .item:hover {
+        //     transform: translateX(-17.5%);
+        // }
+
+    }
+
+    .test .title:hover {
+        transform: translateX(10%);
+
+        ~.item {
+            transform: translateX(-10%);
+        }
+    }

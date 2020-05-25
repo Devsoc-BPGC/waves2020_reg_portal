@@ -1,3 +1,7 @@
+@use './../scss/base';
+@import './../scss/variables';
+
+
 .footer {
     position: relative;
     bottom: 0;
@@ -51,5 +55,9 @@
                 }
             }
         }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        display: none;
     }
 }
