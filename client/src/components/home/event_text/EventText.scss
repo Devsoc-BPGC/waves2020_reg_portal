@@ -13,6 +13,10 @@
         transition: 0.5s ease-out;
         z-index: 1;
         cursor: pointer;
+
+        @media screen and (max-width: 1850px) {
+            font-size: 800%;
+        }
     }
 
     .item {
@@ -26,6 +30,10 @@
         transition: 0.5s ease-out;
         z-index: 0;
         cursor: pointer;
+
+        @media screen and (max-width: 1850px) {
+            font-size: 400%;
+        }
     }
 
 
@@ -37,8 +45,5 @@
         }
 
         transform: translate(-17.5%, 0);
-
-
-
     }
 }

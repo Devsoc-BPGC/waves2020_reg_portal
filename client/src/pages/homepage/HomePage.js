@@ -12,7 +12,7 @@ import Home from '../../components/home/Home';
 
 export default () => {
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
       <Home />
       <Footer />
     </div>
