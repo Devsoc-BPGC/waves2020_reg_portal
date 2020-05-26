@@ -19,11 +19,18 @@
             }
         }
 
-        .config1 {
-            display: none;
+        .config {
+            margin-bottom: 20%;
+        }
 
-            @media screen and (min-width: 1499px) {
-                display: block;
+        .buttons {
+            padding-left: 10%;
+            line-height: 300%;
+
+            .button {
+                font-size: 250%;
+                font-family: GT America;
+                font-weight: bold;
             }
         }
 
@@ -41,6 +48,22 @@
 
             @media screen and (max-width: 1500px) {
                 font-size: 120%;
+            }
+
+            @media screen and (max-width: 1360px) {
+                font-size: 110%;
+            }
+
+            @media screen and (max-width: 1180px) {
+                font-size: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 90%;
+            }
+
+            @media screen and (max-width: 850px) {
+                font-size: 80%;
             }
 
         }

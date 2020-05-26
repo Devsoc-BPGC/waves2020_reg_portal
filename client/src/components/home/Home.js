@@ -38,6 +38,10 @@ export default () => {
         <div className='config'>
           <DesktopEvents config={config} />
         </div>
+        <div className='buttons'>
+          <div className='button'>Register</div>
+          <div className='button'>Contact</div>
+        </div>
       </div>
       <div className='mobile'>
         <div className='main'>
