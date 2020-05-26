@@ -1,0 +1,171 @@
+@use './../scss/base';
+@import './../scss/variables';
+
+
+.home {
+    .desktop {
+        overflow-x: hidden;
+        background-color: #FF6DF0;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 5%;
+
+        .config2 {
+            display: none;
+
+            @media screen and (max-width: 1500px) {
+                display: block;
+            }
+        }
+
+        .config {
+            margin-bottom: 20%;
+        }
+
+        .buttons {
+            padding-left: 10%;
+            line-height: 300%;
+
+            .button {
+                font-size: 250%;
+                font-family: GT America;
+                font-weight: bold;
+            }
+        }
+
+
+        .text {
+            position: absolute;
+            font-family: GT America;
+            font-size: 150%;
+            z-index: 3;
+            top: 10%;
+            left: 5%;
+            width: 20%;
+            color: #2f0B4B;
+            background-color: #FF6DF0;
+
+            @media screen and (max-width: 1500px) {
+                font-size: 120%;
+            }
+
+            @media screen and (max-width: 1360px) {
+                font-size: 110%;
+            }
+
+            @media screen and (max-width: 1180px) {
+                font-size: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 90%;
+            }
+
+            @media screen and (max-width: 850px) {
+                font-size: 80%;
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .mobile {
+        @media screen and (min-width: $tabletWidth) {
+            display: none;
+        }
+
+        overflow-x: hidden;
+        background-color: #2F0B4B;
+
+        .main {
+            .about {
+                position: relative;
+                // top: 1000%;
+                // left: 60%;
+                text-align: left;
+                line-height: 50%;
+                color: #FF6DF0;
+                font-family: Circular;
+                font-style: italic;
+                font-size: 600%;
+                transform: translate(65%, 600%);
+
+                .ab {
+                    margin-left: 7.5%;
+                }
+
+                @media screen and (max-width: $phoneWidth) {
+                    font-size: 600%;
+                    transform: translate(60%, 500%);
+                }
+
+                @media screen and (max-width: 400px) {
+                    transform: translate(55%, 500%);
+                }
+            }
+
+            .text {
+                position: relative;
+                color: white;
+                background-color: transparent;
+                padding: 15%;
+                padding-top: 0;
+                font-size: 175%;
+                font-family: GT America;
+                z-index: 1;
+
+
+                .pink {
+                    color: #FF6DF0;
+                }
+
+                .line {
+                    width: 20%;
+                    background-color: #FF6DF0;
+                    margin-top: 7.5%;
+                    padding: 1%;
+                }
+
+                @media screen and (max-width: $phoneWidth) {
+                    font-size: 125%;
+                }
+            }
+        }
+
+        .events_big {
+            margin-top: 5%;
+
+            @media screen and (max-width: 400px) {
+                display: none;
+            }
+
+            .event {
+
+                display: flex;
+                justify-content: center;
+                transform: translateX(-2%);
+                margin-bottom: 4%;
+            }
+        }
+
+        .events_small {
+            margin-top: 5%;
+
+            @media screen and (min-width: 401px) {
+                display: none;
+            }
+
+            .event {
+
+                display: flex;
+                justify-content: center;
+                transform: translateX(-2%);
+                margin-bottom: 4%;
+            }
+        }
+    }
+}

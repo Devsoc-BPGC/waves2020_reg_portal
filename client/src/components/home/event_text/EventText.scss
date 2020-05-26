@@ -1,0 +1,132 @@
+ .block {
+     height: 150px;
+
+     @media screen and (max-width: 1500px) {
+         height: 120px;
+     }
+
+     @media screen and (max-width: 1360px) {
+         height: 90px;
+     }
+
+     @media screen and (max-width: 1180px) {
+         height: 60px;
+     }
+
+     @media screen and (max-width: 1000px) {
+         height: 30px;
+     }
+
+     @media screen and (max-width: 850px) {
+         height: 15px;
+     }
+ }
+
+ .event {
+     padding-top: -10%;
+     font-family: Circular;
+     font-style: italic;
+     padding-bottom: 2%;
+
+     .title {
+         position: relative;
+         top: 10%;
+         left: 0;
+         font-size: 900%;
+         width: fit-content;
+         height: fit-content;
+         color: #2f0B4B;
+         transition: 0.5s ease-out;
+         z-index: 1;
+         cursor: pointer;
+
+         @media screen and (max-width: 1500px) {
+             font-size: 800%;
+             top: 20%;
+         }
+
+         @media screen and (max-width: 1360px) {
+             font-size: 700%;
+             top: 40%;
+         }
+
+         @media screen and (max-width: 1180px) {
+             font-size: 600%;
+             top: 85%;
+         }
+
+         @media screen and (max-width: 1000px) {
+             font-size: 500%;
+             top: 215%;
+         }
+
+         @media screen and (max-width: 850px) {
+             font-size: 400%;
+             top: 400%;
+         }
+     }
+
+     .item {
+         font-size: 450%;
+         color: white;
+         white-space: nowrap;
+         position: relative;
+         top: -110%;
+         padding-left: 10%;
+         padding-right: 0;
+         padding-top: 0;
+         padding-bottom: 0;
+         transition: 0.5s ease-out;
+         z-index: 0;
+         cursor: pointer;
+
+         @media screen and (max-width: 1500px) {
+             font-size: 400%;
+         }
+
+         @media screen and (max-width: 1360px) {
+             font-size: 350%;
+         }
+
+         @media screen and (max-width: 1180px) {
+             font-size: 300%;
+         }
+
+         @media screen and (max-width: 1000px) {
+             font-size: 250%;
+         }
+
+         @media screen and (max-width: 850px) {
+             font-size: 200%;
+         }
+     }
+
+     @media screen and (max-width: 1500px) {
+         padding-bottom: 2.5%;
+     }
+
+     @media screen and (max-width: 1360px) {
+         padding-bottom: 4%;
+     }
+
+     @media screen and (max-width: 1180px) {
+         padding-bottom: 6%;
+     }
+
+     @media screen and (max-width: 1000px) {
+         padding-bottom: 8%;
+     }
+
+     @media screen and (max-width: 850px) {
+         padding-bottom: 8%;
+     }
+
+ }
+
+ .block .title:hover {
+     transform: translateX(-5%);
+
+     ~.item {
+         transform: translateX(10%);
+     }
+ }
