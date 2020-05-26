@@ -5,30 +5,17 @@ import DesktopEvents from './desktop_events/DesktopEvents';
 // import '../../fonts/Font.scss';
 
 //  DEFINING PROP ARRAY FOR DESKTOP
-const config1 = [
-  ['0.75%', '60%'],
-  ['20.8%', '50%'],
-  ['40.8%', '60%'],
-  ['61.8%', '50%'],
-  ['82%', '40%'],
-  ['102.5%', '35%'],
-  ['123.5%', '50%'],
-  ['143.5%', '45%'],
-  ['164%', '33%'],
-  ['184%', '15%'],
-];
-
-const config2 = [
-  ['0.75%', '40%'],
-  ['15%', '30%'],
-  ['28.8%', '40%'],
-  ['43.2%', '30%'],
-  ['57.5%', '20%'],
-  ['71.5%', '15%'],
-  ['86%', '30%'],
-  ['100%', '25%'],
-  ['114.5%', '13%'],
-  ['128.5%', '15%'],
+const config = [
+  '55%',
+  '45%',
+  '55%',
+  '45%',
+  '35%',
+  '28%',
+  '45%',
+  '40%',
+  '25%',
+  '15%',
 ];
 
 export default () => {
@@ -48,11 +35,8 @@ export default () => {
           acts setting the stage on fire. For everything that BITS Goa is and
           represents, Waves is the fest you just can’t miss.
         </div>
-        <div className='config1'>
-          <DesktopEvents config={config1} />
-        </div>
-        <div className='config2'>
-          <DesktopEvents config={config2} />
+        <div className='config'>
+          <DesktopEvents config={config} />
         </div>
       </div>
       <div className='mobile'>

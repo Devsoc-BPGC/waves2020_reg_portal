@@ -14,7 +14,7 @@
         .config2 {
             display: none;
 
-            @media screen and (max-width: 1850px) {
+            @media screen and (max-width: 1500px) {
                 display: block;
             }
         }
@@ -22,7 +22,7 @@
         .config1 {
             display: none;
 
-            @media screen and (min-width: 1849px) {
+            @media screen and (min-width: 1499px) {
                 display: block;
             }
         }
@@ -39,7 +39,7 @@
             color: #2f0B4B;
             background-color: #FF6DF0;
 
-            @media screen and (max-width: 1850px) {
+            @media screen and (max-width: 1500px) {
                 font-size: 120%;
             }
 
