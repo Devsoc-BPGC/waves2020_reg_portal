@@ -1,10 +1,67 @@
 @use './../../../components/scss/base';
 @import './../../../components/scss/variables';
 
+$page-padding: 2rem;
+$page-padding-small: 1rem;
+$page-top-padding: 15rem;
+$page-top-padding-small: 7rem;
+$page-width: calc(100vw - $page-top-padding - $page-top-padding);
+$page-width-small: calc(
+  100vw - $page-top-padding-small - $page-top-padding-small
+);
+
 div.registration-page-body {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    
-    background-color: #ff6df0;
+  position: relative;
+  width: $page-width;
+  min-height: 100vh;
+  padding: $page-padding;
+  padding-top: $page-top-padding;
+
+  background-color: #ff6df0;
+
+  @media screen and (max-width: $phoneWidth) {
+    width: $page-width-small;
+    padding: $page-padding-small;
+    padding-top: $page-top-padding-small;
+  }
+
+  div.registration-page-body-row {
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-top: 0.5rem;
+  }
+
+  div.registration-page-body-row > div {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 5rem;
+    vertical-align: text-top;
+
+    @media screen and (max-width: $phoneWidth) {
+      display: block;
+      width: initial;
+    }
+  }
+  // div.registration-page-body-row:not(:last-child) {
+  //   margin-bottom: 5rem;
+
+  //   @media screen and (max-width: $phoneWidth) {
+  //     margin-bottom: 0;
+  //   }
+  // }
+
+  // div.registration-page-body-row > div {
+  //   top: 0;
+  //   @media screen and (max-width: $phoneWidth) {
+  //     margin-right: 0;
+  //     margin-bottom: 5rem;
+  //   }
+  // }
+
+  // div.registration-page-body-row > div:not(:last-child){
+  //   margin-right: 25rem;
+  //   @media screen and (max-width: $phoneWidth) {
+  //     margin-right: 0;
+  //   }
+  // }
 }

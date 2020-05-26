@@ -37,7 +37,7 @@ export default () => {
       <div className='main-page-menu-button'>
         <span>
           {/* Add here the PC screen menu button. */}
-          <MenuButton text='Menu →' color='#FF6DF0' size='' />
+          <MenuButton text='Menu →' color='#FF6DF0' />
         </span>
         <span>
           {/* Add here the mobile screen menu button. */}

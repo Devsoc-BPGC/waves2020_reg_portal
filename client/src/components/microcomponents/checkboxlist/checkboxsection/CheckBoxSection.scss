@@ -1,0 +1,37 @@
+@use './../../../scss/base';
+@import './../../../scss/variables';
+@import './../../../../fonts/Font.scss';
+
+div.checkbox-list-section {
+  margin-bottom: 1rem;
+  font-family: Circular;
+
+  div.checkbox-list-section-heading {
+    margin-bottom: 0.5rem;
+    font-style: italic;
+
+    label {
+      cursor: pointer;
+
+      div {
+        position: absolute;
+        width: 50%;
+        height: 1rem;
+        transform: translateY(-100%);
+      }
+    }
+    input {
+      visibility: hidden;
+    }
+  }
+
+  div.checkbox-list-section-items {
+    margin-left: 1rem;
+
+    transition: height 5s ease;
+  }
+}
+
+div.checkbox-list-section:not(:last-child) {
+  margin-bottom: 2rem;
+}

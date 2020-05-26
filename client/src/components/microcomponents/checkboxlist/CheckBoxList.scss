@@ -1,0 +1,51 @@
+// cSpell: disable
+@use './../../scss/base';
+@import './../../scss/variables';
+
+@font-face {
+  font-family: 'special-check-box-list-text-font';
+  src: url('./../../../fonts/GT\ America\ Regular.ttf');
+}
+
+div.special-check-box-list {
+  display: inline-block;
+
+  div.special-check-box-list-label {
+    // display: inline-block;
+    letter-spacing: -0.15rem;
+    font-size: 3.2rem;
+    float: left;
+
+    div {
+      -webkit-text-stroke-width: 0.12rem;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 2rem;
+
+      div {
+        -webkit-text-stroke-width: 0.07rem;
+      }
+    }
+  }
+  div.special-check-box-list-label > div:nth-child(2) {
+      font-size: 1rem;
+      -webkit-text-stroke-width: initial;
+      letter-spacing: initial;
+      font-family: Circular;
+      font-weight: lighter;
+  }
+
+  div.special-check-box-list-buttonlist {
+    position: relative;
+    display: inline-block;
+    margin-left: 3rem;
+
+    transition: height 1s;
+
+    @media screen and (max-width: $phoneWidth) {
+        margin-top: 4rem;
+        display: block;
+    }
+  }
+}
