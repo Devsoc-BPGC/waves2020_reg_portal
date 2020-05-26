@@ -7,6 +7,7 @@ import CheckBoxList from '../../../components/microcomponents/checkboxlist/Check
 
 export default () => {
   const radioButtonIds = ['Female', 'Male', 'Others'];
+  // advisory -- keep the names distinct
   const checkListItems = {
     MUSIC: [
       'Indian Rock',
@@ -15,15 +16,15 @@ export default () => {
       'Rapsody',
       'Silence of the Amps',
     ],
-    DANCE: ['Natyanlaji'],
-    FASHION: [],
-    DRAMA: [],
-    'FINE ARTS': [],
-    DESIGN: [],
-    'CARPE DICTUM': [],
-    QUIZ: [],
-    PHOTOGRAPHY: [],
-    SPECIALS: [],
+    DANCE: ['Natyanlaji', 'test1', 'test2', 'test3', 'test4'],
+    FASHION: ['test5', 'test6', 'test7', 'test8'],
+    DRAMA: ['test12', 'test11', 'test10', 'test9'],
+    'FINE ARTS': ['test13', 'test14', 'test15', 'test16'],
+    DESIGN: ['test20', 'test19', 'test18', 'test17'],
+    'CARPE DICTUM': ['test21', 'test22', 'test23', 'test24'],
+    QUIZ: ['test28', 'test27', 'test26', 'test25'],
+    PHOTOGRAPHY: ['test29', 'test30', 'test31', 'test32'],
+    SPECIALS: ['test36', 'test35', 'test34', 'test33'],
   };
   const checkListHeaders = [
     'MUSIC',

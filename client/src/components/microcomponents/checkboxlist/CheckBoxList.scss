@@ -15,6 +15,7 @@ div.special-check-box-list {
     letter-spacing: -0.15rem;
     font-size: 3.2rem;
     float: left;
+    margin-bottom: 2rem;
 
     div {
       -webkit-text-stroke-width: 0.12rem;
@@ -44,8 +45,8 @@ div.special-check-box-list {
     transition: height 1s;
 
     @media screen and (max-width: $phoneWidth) {
-        margin-top: 4rem;
         display: block;
+        margin-top: 5rem;
     }
   }
 }

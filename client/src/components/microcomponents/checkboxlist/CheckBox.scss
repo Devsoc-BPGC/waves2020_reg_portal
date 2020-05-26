@@ -3,15 +3,43 @@
 @import './../../scss/variables';
 
 @font-face {
-    font-family: 'special-check-box-list-text-font';
-    src: url('./../../../fonts/GT\ America\ Regular.ttf');
+  font-family: 'special-check-box-list-text-font';
+  src: url('./../../../fonts/GT\ America\ Regular.ttf');
+}
+
+@keyframes anim-checkbox-switch-select {
+  from {
+    max-height: 0;
+    display: none;
+    margin-bottom: 0;
   }
+  to {
+    max-height: 1rem;
+    margin-bottom: 12px;
+    display: initial;
+  }
+}
+@keyframes anim-checkbox-switch-deselect {
+  from {
+    max-height: 1rem;
+    margin-bottom: 12px;
+    display: initial;
+  }
+  to {
+    max-height: 0;
+    display: none;
+    margin-bottom: 0;
+  }
+}
 
 label.custom-check-box-container {
   display: block;
   position: relative;
   padding-left: 30px;
   margin-bottom: 12px;
+
+  animation: anim-checkbox-switch-select .3s ease;
+
   cursor: pointer;
   font-size: 1rem;
   -webkit-user-select: none;
@@ -37,7 +65,7 @@ label.custom-check-box-container {
     width: 12px;
     border-style: solid;
     border-width: 1px;
-    border-color: #EBEBFC;
+    border-color: #ebebfc;
   }
 
   span.custom-check-box-checkmark:after {
@@ -47,12 +75,12 @@ label.custom-check-box-container {
   }
 
   input:checked ~ span.custom-check-box-checkmark {
-    border-color: black;
+    border-color: #2f0b4b;
   }
 
   input:checked ~ span.custom-check-box-checkmark:after {
     display: block;
-    background-color: black;
+    background-color: #2f0b4b;
   }
 
   span.custom-check-box-checkmark:after {
@@ -63,10 +91,18 @@ label.custom-check-box-container {
   }
 }
 
-label.custom-check-box-container:hover input ~ span.custom-check-box-checkmark {
-  background-color: #a0a0a0;
-}
+div.checkbox-list-section.checkbox-section-closed
+  label.custom-check-box-container:not(.custom-check-box-checked) {
+  visibility: hidden;
+  animation: anim-checkbox-switch-deselect .3s ease;
+  max-height: 0;
+  margin: 0;
 
-div.checkbox-list-section.checkbox-section-closed label.custom-check-box-container:not(.custom-check-box-checked) {
-  display: none;
+  span.custom-check-box-checkmark {
+    display: none;
+  }
+}
+div.checkbox-list-section.checkbox-section-closed
+  label.custom-check-box-container.custom-check-box-checked:first-child {
+    margin-top: 1rem;
 }
