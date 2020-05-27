@@ -16,14 +16,14 @@
   to {
     max-height: 1rem;
     margin-bottom: 12px;
-    display: initial;
+    display: block;
   }
 }
 @keyframes anim-checkbox-switch-deselect {
   from {
     max-height: 1rem;
+    display: block;
     margin-bottom: 12px;
-    display: initial;
   }
   to {
     max-height: 0;
@@ -102,7 +102,9 @@ div.checkbox-list-section.checkbox-section-closed
     display: none;
   }
 }
-div.checkbox-list-section.checkbox-section-closed
-  .custom-check-box-checked:first-child {
+div.checkbox-list-section.checkbox-section-closed .custom-check-box-checked {
     margin-top: 1rem;
+}
+div.checkbox-list-section.checkbox-section-closed .custom-check-box-checked ~ .custom-check-box-checked {
+    margin-top: 0rem;
 }

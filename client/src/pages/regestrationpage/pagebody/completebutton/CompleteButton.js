@@ -1,3 +1,4 @@
+// cSpell: disable
 import React from 'react';
 import './CompleteButton.scss';
 import BigText from '../../../../components/commonpageheader/heading/PageHeading';

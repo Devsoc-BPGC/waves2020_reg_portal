@@ -47,9 +47,10 @@ div.special-text-field {
     display: block;
 
     @media screen and (max-width: $phoneWidth) {
-      display: inline-block;
+      // display: inline-block;
       position: initial;
       padding-left: 1rem;
+      width: 80vw;
     }
   }
 

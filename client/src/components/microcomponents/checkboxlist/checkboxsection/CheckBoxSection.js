@@ -12,7 +12,7 @@ export default props => {
     return <CheckBox key={item} text={item} group={group} id={item} />;
   });
 
-  function oc(e) {
+  function checkboxSectionToggle(e) {
     const section = e.target.parentElement.parentElement.parentElement;
     const sections = section.parentElement.childNodes;
     const prop = 'checkbox-section-closed';
@@ -36,7 +36,7 @@ export default props => {
       <div className='checkbox-list-section-heading'>
         <label htmlFor={dummyId}>
           <span>{heading}</span>
-          <input type='checkbox' onClick={oc} id={dummyId} />
+          <input type='checkbox' onClick={checkboxSectionToggle} id={dummyId} />
         </label>
       </div>
       <div className='checkbox-list-section-items'>{checkboxList}</div>
