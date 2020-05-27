@@ -114,16 +114,6 @@ $anim-waves-duration: 0.5s;
   font-family: 'main-page-day-date-font';
   src: url('./../../fonts/GT\ America\ Extended\ Bold.ttf');
 }
-// @mixin div-phone-props {
-//   position: absolute;
-//   right: initial;
-//   bottom: initial;
-//   top: calc(#{$header-padding * 2});
-//   left: calc(#{$header-padding/2});
-
-//   font-size: $font-size-small;
-//   line-height: calc(#{$font-size-small * (2 / 3)});
-// }
 
 div.main-page-header {
   letter-spacing: -1rem; // minor decorative adjustment
