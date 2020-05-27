@@ -1,37 +1,37 @@
 @use './../../../../components/scss/base';
 @import './../../../../components/scss/variables';
 
+@keyframes anim-registration-page-complete-button-frame-in {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(-25%, -50%);
+  }
+}
+@keyframes anim-registration-page-complete-button-frame-out {
+  from {
+    transform: translate(-25%, -50%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
 @keyframes anim-registration-page-complete-button-back-in {
   from {
     transform: translate(25%, -25%);
   }
   to {
-    transform: translate(0, -25%);
+    transform: translate(-25%, -25%);
   }
 }
 @keyframes anim-registration-page-complete-button-back-out {
   from {
-    transform: translate(0, -25%);
+    transform: translate(-25%, -25%);
   }
   to {
     transform: translate(25%, -25%);
-  }
-}
-
-@keyframes anim-registration-page-complete-button-front-in {
-  from {
-    transform: none;
-  }
-  to {
-    transform: translateX(25%);
-  }
-}
-@keyframes anim-registration-page-complete-button-front-out {
-  from {
-    transform: translateX(25%);
-  }
-  to {
-    transform: none;
   }
 }
 
@@ -45,14 +45,16 @@ div.registration-page-complete-button {
   left: 75%;
   transform: translate(-50%, -50%);
 
+  animation: anim-registration-page-complete-button-frame-out 0.3s ease;
+
   @media screen and (max-width: $phoneWidth) {
     position: relative;
     margin-top: 10rem;
-    float: right;
+    // float: right;
     width: -webkit-fit-content;
     width: fit-content;
-    left: 0;
-    transform: translateY(-50%);
+    left: 50%;
+    // transform: translateY(-50%);
   }
 
   > div:nth-child(1) {
@@ -69,9 +71,6 @@ div.registration-page-complete-button {
 
   > div:nth-child(2) {
     display: inline-block;
-
-    transform: none;
-    animation: anim-registration-page-complete-button-front-out 0.3s ease;
 
     > div {
       position: initial;
@@ -109,12 +108,11 @@ div.registration-page-complete-button {
 }
 
 div.registration-page-complete-button:hover {
+  transform: translate(-25%, -50%);
+  animation: anim-registration-page-complete-button-frame-in 0.3s ease;
+
   > div:nth-child(1) {
-    transform: translate(0, -25%);
+    transform: translate(-25%, -25%);
     animation: anim-registration-page-complete-button-back-in 0.3s ease;
-  }
-  > div:nth-child(2) {
-    transform: translateX(25%);
-    animation: anim-registration-page-complete-button-front-in 0.3s ease;
   }
 }

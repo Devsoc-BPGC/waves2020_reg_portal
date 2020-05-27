@@ -25,6 +25,8 @@ div.page-heading {
   color: #ebebfc;
   padding-left: $left-padding;
 
+  user-select: none;
+
   @media screen and (max-width: $phoneWidth) {
     line-height: $line-height-small;
     padding-left: $left-padding-small;
