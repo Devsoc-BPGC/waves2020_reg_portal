@@ -1,0 +1,120 @@
+@use './../../../../components/scss/base';
+@import './../../../../components/scss/variables';
+
+@keyframes anim-registration-page-complete-button-back-in {
+  from {
+    transform: translate(25%, -25%);
+  }
+  to {
+    transform: translate(0, -25%);
+  }
+}
+@keyframes anim-registration-page-complete-button-back-out {
+  from {
+    transform: translate(0, -25%);
+  }
+  to {
+    transform: translate(25%, -25%);
+  }
+}
+
+@keyframes anim-registration-page-complete-button-front-in {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(25%);
+  }
+}
+@keyframes anim-registration-page-complete-button-front-out {
+  from {
+    transform: translateX(25%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+div.registration-page-complete-button {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: fit-content;
+  cursor: pointer;
+
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: $phoneWidth) {
+    position: relative;
+    margin-top: 10rem;
+    float: right;
+    width: -webkit-fit-content;
+    width: fit-content;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  > div:nth-child(1) {
+    position: absolute;
+    width: 10rem;
+    height: 100%;
+    background-color: #2f0b4b;
+
+    transform: translate(25%, -25%);
+    z-index: -1;
+
+    animation: anim-registration-page-complete-button-back-out 0.3s ease;
+  }
+
+  > div:nth-child(2) {
+    display: inline-block;
+
+    transform: none;
+    animation: anim-registration-page-complete-button-front-out 0.3s ease;
+
+    > div {
+      position: initial;
+      transform: none;
+      z-index: initial;
+      left: initial;
+      bottom: initial;
+      padding: 0;
+
+      span {
+        display: block;
+        font-size: 2.5rem;
+        line-height: 2rem;
+
+        @media screen and (max-width: $phoneWidth) {
+          font-size: 2.2rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+
+  > div:nth-child(3) {
+    display: inline-block;
+
+    > img {
+      width: 4rem;
+      transform: translateX(-10%);
+
+      @media screen and (max-width: $phoneWidth) {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+div.registration-page-complete-button:hover {
+  > div:nth-child(1) {
+    transform: translate(0, -25%);
+    animation: anim-registration-page-complete-button-back-in 0.3s ease;
+  }
+  > div:nth-child(2) {
+    transform: translateX(25%);
+    animation: anim-registration-page-complete-button-front-in 0.3s ease;
+  }
+}

@@ -4,6 +4,7 @@ import './PageBody.scss';
 import TextField from '../../../components/microcomponents/textfield/TextField';
 import RadioButtonList from '../../../components/microcomponents/radiobuttonlist/RadioButtonList';
 import CheckBoxList from '../../../components/microcomponents/checkboxlist/CheckBoxList';
+import CompleteButton from './completebutton/CompleteButton';
 
 export default () => {
   const radioButtonIds = ['Female', 'Male', 'Others'];
@@ -73,6 +74,7 @@ export default () => {
         </div>
         <div>
           <TextField label='PHONE' labelNextLine='NUMBER' />
+          <CompleteButton />
         </div>
       </div>
     </div>
