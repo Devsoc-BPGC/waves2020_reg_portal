@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './register_button.scss';
 
 import arrow from '../../../imageassets/Arrow1.jpg';
 
