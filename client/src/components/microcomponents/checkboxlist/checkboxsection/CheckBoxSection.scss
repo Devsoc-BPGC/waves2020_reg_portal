@@ -1,0 +1,76 @@
+@use './../../../scss/base';
+@import './../../../scss/variables';
+@import './../../../../fonts/Font.scss';
+
+$check-box-label-animation-duration: 0.3s;
+$check-box-section-animation-duration: 0.3s;
+
+@keyframes anim-checkbox-section-switch-select {
+  from {
+    transform: translateX(0);
+    color: #ff6df0;
+  }
+  to {
+    transform: translateX(50%);
+    color: white;
+  }
+}
+@keyframes anim-checkbox-section-switch-deselect {
+  from {
+    transform: translateX(50%);
+    color: white;
+  }
+  to {
+    transform: translateX(0);
+    color: #ff6df0;
+  }
+}
+
+div.checkbox-list-section {
+  margin-bottom: 1rem;
+  font-family: Circular;
+
+  div.checkbox-list-section-heading {
+    margin-bottom: 0.5rem;
+    font-style: italic;
+
+    label {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      background-color: #2f0b4b;
+
+      span {
+        color: #ff6df0;
+        display: inline-block;
+        transform: translateX(0);
+        animation: anim-checkbox-section-switch-deselect
+          $check-box-label-animation-duration linear;
+      }
+
+      input {
+        visibility: hidden;
+        width: 0;
+        max-height: 0;
+      }
+    }
+  }
+
+  div.checkbox-list-section-items {
+    margin-left: 1rem;
+  }
+}
+
+div.checkbox-list-section:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+div.checkbox-list-section:not(.checkbox-section-closed) {
+  div.checkbox-list-section-heading > label > span {
+    color: white;
+    transform: translateX(50%);
+    animation: anim-checkbox-section-switch-select
+      $check-box-label-animation-duration ease;
+  }
+}
