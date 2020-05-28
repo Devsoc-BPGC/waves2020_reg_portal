@@ -8,7 +8,7 @@ export default props => {
   const { labelNextLine } = props;
   const { width } = props;
 
-  // console.log((label) + ' ' + labelNextLine + ' ' + width);
+  const inputNameProp = label;
 
   const specialTextFieldLabel1 = (
     <div className='special-text-field-label'>
@@ -28,16 +28,10 @@ export default props => {
   }
   return (
     <div className='special-text-field'>
-      {/* <div className="special-text-field-label">
-                <Label text={label} />
-            </div> */}
       {specialTextFieldLabel1}
-      {/* <div className="special-text-field-label">
-                <Label text={labelNextLine} />
-            </div> */}
       {specialTextFieldLabel2}
       <div className='special-text-field-textfield'>
-        <input type='text' width={width} />
+        <input type='text' width={width} name={inputNameProp} />
       </div>
     </div>
   );

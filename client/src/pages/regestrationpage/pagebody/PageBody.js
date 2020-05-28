@@ -40,6 +40,52 @@ export default () => {
     'SPECIALS',
   ];
 
+  function sendDataToServer(data) {
+    // TODO: add the code to send the data
+    let success = true;
+
+    // code -> manage success accordingly
+    if (data === 'undefined') success = false;
+
+    return success;
+  }
+
+  function register() {
+    const newRow = document.createElement('div');
+    const newDiv = document.createElement('div');
+    newRow.classList.add('registration-page-body-row');
+    newDiv.classList.add('success-fail-alert');
+    newRow.appendChild(newDiv);
+    document.querySelector('div.registration-page-body').appendChild(newRow);
+    newDiv.innerHTML = 'UNDER PROCESS';
+
+    const data = {};
+
+    document.querySelectorAll('input[type=text]').forEach(element => {
+      data[element.name] = element.value;
+    });
+
+    data.gender = document.querySelector('input[type=radio]:checked').value;
+
+    checkListHeaders.forEach(header => {
+      data[header] = [];
+      checkListItems[header].forEach(item => {
+        if (document.getElementById(item).checked === true) {
+          data[header].push(item);
+        }
+      });
+    });
+
+    if (sendDataToServer(data) === true) {
+      // setTimeout is temporary adjustment.
+      setTimeout(() => {
+        newDiv.innerHTML = 'DONE!!';
+      }, 1000);
+    } else {
+      console.log('failed');
+    }
+  }
+
   return (
     <div className='registration-page-body'>
       <div className='registration-page-body-row'>
@@ -74,7 +120,7 @@ export default () => {
         </div>
         <div>
           <TextField label='PHONE' labelNextLine='NUMBER' />
-          <CompleteButton />
+          <CompleteButton onclick={register} />
         </div>
       </div>
     </div>

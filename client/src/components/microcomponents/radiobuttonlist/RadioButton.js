@@ -7,7 +7,14 @@ export default props => {
   return (
     <label className='custom-radio-button-container' htmlFor={id}>
       {text}
-      <input type='radio' name={group} id={id} value={id} />
+      <input
+        type='radio'
+        name={group}
+        id={id}
+        value={id}
+        checked='checked'
+        onChange={() => {}}
+      />
       <span className='custom-radio-button-checkmark' />
     </label>
   );
