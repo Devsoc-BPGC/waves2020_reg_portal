@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './events_title.scss';
 
 const screenWidth = window.screen.width;
 
