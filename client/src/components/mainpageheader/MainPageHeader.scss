@@ -15,12 +15,92 @@ $font-size-alt: 45vw;
 // $font-size-2020: 17rem;
 $font-size-2020: 36vh;
 $font-size-2020-alt: 17.7vw;
-$font-size-small: 40vh;
+$font-size-small: 39vh;
 $font-size-small-alt: 25vw;
 $font-size-tablet: $font-size-alt;
 $font-size-2020-tablet: $font-size-small-alt;
 
 $bottom-padding: 25vh;
+
+////////props - don't change////////
+$bottom-prop-heading-2020: min(
+  calc(#{$font-size/2}),
+  calc(#{$font-size-alt/2})
+);
+$bottom-prop-heading-2020-tablet: calc(#{$header-padding + $header-padding/4});
+
+$bottom-prop-heading-waves: min(
+  calc(#{$font-size/2}),
+  calc(#{$font-size-alt/2})
+);
+$bottom-prop-heading-waves-tablet: $header-padding;
+$bottom-prop-heading-waves-phone: initial;
+////////////////////////////////////
+
+///////// animations ///////////////
+@keyframes anim-2020-heading {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  50% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: $bottom-prop-heading-2020;
+    opacity: 1;
+  }
+}
+@keyframes anim-2020-heading-tablet {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  50% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: $bottom-prop-heading-2020-tablet;
+    opacity: 1;
+  }
+}
+
+@keyframes anim-waves-heading {
+  from {
+    bottom: -100%;
+    opacity: 0;
+  }
+  to {
+    bottom: $bottom-prop-heading-waves;
+    opacity: 1;
+  }
+}
+@keyframes anim-waves-heading-tablet {
+  from {
+    bottom: -100%;
+    opacity: 0;
+  }
+  to {
+    bottom: $bottom-prop-heading-waves-tablet;
+    opacity: 1;
+  }
+}
+@keyframes anim-waves-heading-phone {
+  from {
+    bottom: -100%;
+    opacity: 0;
+  }
+  to {
+    bottom: $bottom-prop-heading-waves-phone;
+    opacity: 1;
+  }
+}
+
+$anim-2020-duration: 1s;
+$anim-waves-duration: 0.5s;
+////////////////////////////////////
 
 @font-face {
   font-family: 'main-page-font';
@@ -33,16 +113,6 @@ $bottom-padding: 25vh;
 @font-face {
   font-family: 'main-page-day-date-font';
   src: url('./../../fonts/GT\ America\ Extended\ Bold.ttf');
-}
-@mixin div-phone-props {
-  position: absolute;
-  right: initial;
-  bottom: initial;
-  top: calc(#{$header-padding * 2});
-  left: calc(#{$header-padding/2});
-
-  font-size: $font-size-small;
-  line-height: calc(#{$font-size-small * (2 / 3)});
 }
 
 div.main-page-header {
@@ -61,21 +131,35 @@ div.main-page-header {
   }
 
   div.main-page-header-main-text {
+    // bottom: ;
     div {
       position: absolute;
       right: $header-padding;
-      bottom: min(calc(#{$font-size/2}), calc(#{$font-size-alt/2}));
+      bottom: $bottom-prop-heading-waves;
       font-size: min($font-size, $font-size-alt);
+
+      animation: anim-waves-heading $anim-waves-duration ease;
 
       // tablet
       @media screen and (max-width: $tabletWidth) {
-        bottom: $header-padding;
+        bottom: $bottom-prop-heading-waves-tablet;
 
         font-size: $font-size-tablet;
         line-height: calc(#{$font-size-tablet * (2 / 3)});
+
+        animation: anim-waves-heading-tablet $anim-waves-duration ease;
       }
       @media screen and (max-width: $phoneWidth) {
-        @include div-phone-props;
+        position: absolute;
+        right: initial;
+        bottom: $bottom-prop-heading-waves-phone;
+        top: calc(#{$header-padding * 2});
+        left: calc(#{$header-padding/2});
+
+        font-size: $font-size-small;
+        line-height: calc(#{$font-size-small * (2 / 3)});
+
+        animation: anim-waves-heading-phone 3s ease;
       }
 
       span {
@@ -95,7 +179,7 @@ div.main-page-header {
 
     // this is the div with 2020 written in
     div:nth-child(2) {
-      bottom: min(calc(#{$font-size/2}), calc(#{$font-size-alt/2}));
+      bottom: $bottom-prop-heading-2020;
 
       color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: calc(#{$font-size-2020/30}) white;
@@ -104,14 +188,21 @@ div.main-page-header {
       font-family: 'main-page-font-2020';
 
       transform: scale(0.5)
-        translate(50%, min(calc(#{$font-size/2}*(0.6)), calc(#{$font-size-alt/2}*(0.6)))); //, {$header-padding});
+        translate(
+          50%,
+          min(calc(#{$font-size/2}* (0.6)), calc(#{$font-size-alt/2}* (0.6)))
+        );
+
+      animation: anim-2020-heading $anim-2020-duration ease;
 
       @media screen and (max-width: $tabletWidth) {
-        bottom: calc(#{$header-padding + $header-padding/4});
+        bottom: $bottom-prop-heading-2020-tablet;
         transform: initial;
 
         font-size: $font-size-2020-tablet;
         line-height: calc(#{$font-size-2020-tablet * (2 / 3)});
+
+        animation: anim-2020-heading-tablet $anim-2020-duration ease;
       }
       @media screen and (max-width: $phoneWidth) {
         visibility: hidden;
@@ -137,6 +228,7 @@ div.main-page-header {
 
     color: #ebebfc;
     font-family: 'main-page-day-date-font';
+    font-size: max(1.5vw, 1.5vh);
 
     @media screen and (max-width: $phoneWidth) {
       top: initial;
@@ -172,7 +264,7 @@ div.main-page-header {
       margin-right: 2rem;
 
       img {
-        width: 35px;
+        width: max(2.5vw, 2.5vh);
       }
     }
   }
@@ -189,6 +281,7 @@ div.main-page-header {
 
     color: #ebebfc;
     font-family: initial;
+    font-size: max(2vw, 2vh);
 
     span:nth-child(1) {
       visibility: visible;
