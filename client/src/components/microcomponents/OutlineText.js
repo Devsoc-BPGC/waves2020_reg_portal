@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Outline = styled.div`
+  white-space: nowrap;
   font-family: Circular;
   font-weight: 900;
   font-style: italic;

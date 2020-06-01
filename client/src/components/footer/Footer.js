@@ -2,21 +2,22 @@ import React from 'react';
 import './Footer.scss';
 import OutlineText from '../microcomponents/OutlineText';
 
-export default () => {
+export default props => {
+  const { bgcolor, textcolor, outlinecolor } = props;
   return (
-    <div className='footer'>
+    <div className='footer' style={{ backgroundColor: bgcolor }}>
       <div className='top'>
-        <OutlineText color='#FF6DF0' text='DETAILS' size='700%' />
+        <OutlineText color={outlinecolor} text='DETAILS' size='700%' />
         <div className='right'>
           <OutlineText
-            color='#FF6DF0'
+            color={outlinecolor}
             text='WAVES20'
             size='175%'
             weight='0.75px'
           />
         </div>
       </div>
-      <div className='footer_info'>
+      <div className='footer_info' style={{ color: textcolor }}>
         <div className='col'>
           <div className='head'>EVENTS:</div>
           <br />

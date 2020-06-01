@@ -1,0 +1,124 @@
+.contact {
+    background-color: #FF6DF0;
+    padding-top: 5%;
+    padding-bottom: 0%;
+    max-width: 100vw;
+
+    .events,
+    .convener,
+    .participation,
+    .sponsorship {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 7.5%;
+
+        @media screen and (max-width: 770px) {
+            display: block;
+            margin-left: 0%;
+            margin-right: 8%;
+        }
+
+    }
+
+    .participation,
+    .sponsorship {
+        grid-column-gap: 2%;
+    }
+
+    // FF6DF0
+    // 2f0B4B
+    .verticals {
+        margin-top: 0%;
+        margin-bottom: 5%;
+        display: flex;
+
+        .rectangle {
+
+            width: 15%;
+            background-color: #2f0B4B;
+            height: 3rem;
+            padding-top: 1.5%;
+
+            @media screen and (max-width: 1500px) {
+                width: 10%;
+            }
+
+            @media screen and (max-width: 1200px) {
+                width: 20%;
+            }
+
+            @media screen and (max-width: 767px) {
+                width: 30%;
+            }
+
+            @media screen and (max-width: 420px) {
+                width: 40%;
+            }
+
+            hr {
+                border: none;
+                height: 3rem;
+
+            }
+
+            @media screen and (max-width: 1500px) {
+                height: 2.7rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                height: 2.4rem;
+            }
+
+            @media screen and (max-width: 767px) {
+                height: 1.8rem;
+            }
+
+            @media screen and (max-width: 420px) {
+                height: 1.2rem;
+            }
+        }
+
+        .vertical_title {
+            font-size: 400%;
+            font-family: Bebas Neue;
+            font-weight: 750;
+            padding-left: 1.5%;
+            white-space: nowrap;
+
+            @media screen and (max-width: 1500px) {
+                font-size: 300%;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 200%;
+            }
+
+            @media screen and (max-width: 767px) {
+                font-size: 150%;
+            }
+
+            @media screen and (max-width: 420x) {
+                font-size: 100%;
+            }
+        }
+
+    }
+
+    @media screen and (max-width: 1500px) {
+        padding-top: 5%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding-top: 10%;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 10%;
+    }
+
+    @media screen and (max-width: 420px) {
+        padding-top: 15%;
+    }
+}

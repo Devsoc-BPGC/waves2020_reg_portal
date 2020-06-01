@@ -1,22 +1,9 @@
 import React from 'react';
 import './Home.scss';
-import OutlineText from '../microcomponents/OutlineText';
+import { Link } from 'react-router-dom';
 import DesktopEvents from './desktop_events/DesktopEvents';
-// import '../../fonts/Font.scss';
-
-//  DEFINING PROP ARRAY FOR DESKTOP
-const config = [
-  '55%',
-  '45%',
-  '55%',
-  '45%',
-  '35%',
-  '28%',
-  '45%',
-  '40%',
-  '25%',
-  '15%',
-];
+import MobileEvents from './mobile_events/MobileEvents';
+import config from '../../config/config';
 
 export default () => {
   return (
@@ -36,11 +23,21 @@ export default () => {
           represents, Waves is the fest you just can’t miss.
         </div>
         <div className='config'>
-          <DesktopEvents config={config} />
+          <DesktopEvents config={config.homeDesktop} />
         </div>
         <div className='buttons'>
-          <div className='button'>Register</div>
-          <div className='button'>Contact</div>
+          <Link
+            to='/register'
+            style={{ textDecoration: 'none', color: '#2f0B4B' }}
+          >
+            <div className='button'>Register</div>
+          </Link>
+          <Link
+            to='/contact'
+            style={{ textDecoration: 'none', color: '#2f0B4B' }}
+          >
+            <div className='button'>Contact</div>
+          </Link>
         </div>
       </div>
       <div className='mobile'>
@@ -67,79 +64,12 @@ export default () => {
             <div className='line' />
           </div>
           <div className='events_big'>
-            <div className='event'>
-              <OutlineText text='DANCE' size='650%' color='white' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='MUSIC' size='700%' color='#FF6DF0' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='FASHION' size='500%' color='white' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='DRAMA' size='600%' color='#FF6DF0' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='FINE ARTS' size='450%' color='white' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='DESIGN' size='600%' color='#FF6DF0' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='CARPEDICTUM' size='300%' color='white' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='QUIZ' size='900%' color='#FF6DF0' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='PHOTOGRAPHY' size='300%' color='white' />
-            </div>
-
-            <div className='event'>
-              <OutlineText text='SPECIALS' size='500%' color='#FF6DF0' />
-            </div>
+            <MobileEvents config={config.homeMobile1} />
           </div>
 
           {/* For screen size less than 400px */}
           <div className='events_small'>
-            <div className='event'>
-              <OutlineText text='DANCE' size='600%' color='white' />
-            </div>
-            <div className='event'>
-              <OutlineText text='MUSIC' size='650%' color='#FF6DF0' />
-            </div>
-            <div className='event'>
-              <OutlineText text='FASHION' size='450%' color='white' />
-            </div>
-            <div className='event'>
-              <OutlineText text='DRAMA' size='550%' color='#FF6DF0' />
-            </div>
-            <div className='event'>
-              <OutlineText text='FINE ARTS' size='400%' color='white' />
-            </div>
-            <div className='event'>
-              <OutlineText text='DESIGN' size='550%' color='#FF6DF0' />
-            </div>
-            <div className='event'>
-              <OutlineText text='CARPEDICTUM' size='250%' color='white' />
-            </div>
-            <div className='event'>
-              <OutlineText text='QUIZ' size='850%' color='#FF6DF0' />
-            </div>
-            <div className='event'>
-              <OutlineText text='PHOTOGRAPHY' size='250%' color='white' />
-            </div>
-            <div className='event'>
-              <OutlineText text='SPECIALS' size='450%' color='#FF6DF0' />
-            </div>
+            <MobileEvents config={config.homeMobile2} />
           </div>
         </div>
       </div>

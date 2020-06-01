@@ -14,7 +14,7 @@ export default () => {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <Home />
-      <Footer />
+      <Footer bgcolor='#2f0B4B' textcolor='white' outlinecolor='#FF6DF0' />
     </div>
   );
 };
