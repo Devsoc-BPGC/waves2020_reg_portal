@@ -2,13 +2,19 @@
     src: url('CircularStd-Black.woff');
     font-family: Circular;
 }
-
 @font-face {
     src: url('./CircularStd/CircularStd-MediumItalic.ttf');
     font-family: Circular Italic;
 }
-
 @font-face {
     src: url('./GT America Regular.ttf');
     font-family: GT America Regular;
+
+@font-face{
+    font-family: 'Circular-Std-Regular';
+    src : url("./CircularStd-Black.woff") format("woff");
+}
+ @font-face {
+    font-family: 'GT-America-Extended-Bold';
+    src : url('./GT\ America\ Extended\ Bold.ttf') format("truetype");             
 }
