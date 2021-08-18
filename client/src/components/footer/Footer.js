@@ -10,7 +10,7 @@ export default () => {
         <div className='right'>
           <OutlineText
             color='#FF6DF0'
-            text='WAVES20'
+            text='WAVES21'
             size='175%'
             weight='0.75px'
           />
