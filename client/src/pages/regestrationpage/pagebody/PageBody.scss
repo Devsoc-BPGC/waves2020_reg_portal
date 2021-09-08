@@ -6,10 +6,8 @@ $page-padding: 2rem;
 $page-padding-small: 1rem;
 $page-top-padding: 15rem;
 $page-top-padding-small: 7rem;
-$page-width: calc(100vw - $page-top-padding - $page-top-padding);
-$page-width-small: calc(
-  100vw - $page-top-padding-small - $page-top-padding-small
-);
+$page-width: 100vw;
+$page-width-small: 100vw;
 
 div.registration-page-body {
   position: relative;
@@ -44,11 +42,11 @@ div.registration-page-body {
       width: initial;
     }
   }
-  
+
   div.success-fail-alert {
     color: white;
     font-family: Circular;
     font-size: 3rem;
-    background-color: #2f0B4B;
+    background-color: #2f0b4b;
   }
 }
