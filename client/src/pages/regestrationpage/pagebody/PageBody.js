@@ -89,7 +89,7 @@ export default () => {
       data[element.name] = element.value;
     });
 
-    data.gender = document.querySelector('input[type=radio]:checked').value;
+    data.GENDER = document.querySelector('input[type=radio]:checked').value;
 
     checkListHeaders.forEach(header => {
       data[header] = [];
