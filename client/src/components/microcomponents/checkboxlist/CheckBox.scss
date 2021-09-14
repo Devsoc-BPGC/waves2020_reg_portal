@@ -75,12 +75,12 @@ label.custom-check-box-container {
   }
 
   input:checked ~ span.custom-check-box-checkmark {
-    border-color: #2f0b4b;
+    border-color: #2E8B57;
   }
 
   input:checked ~ span.custom-check-box-checkmark:after {
     display: block;
-    background-color: #2f0b4b;
+    background-color: #2E8B57;
   }
 
   span.custom-check-box-checkmark:after {
