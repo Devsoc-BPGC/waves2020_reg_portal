@@ -131,7 +131,7 @@ export default () => {
           />
         </div>
         <div>
-          <TextField label='EMAIL ID' />
+          <TextField label='EMAIL' />
         </div>
       </div>
       <div className='registration-page-body-row'>
