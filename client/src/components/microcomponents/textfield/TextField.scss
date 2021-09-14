@@ -43,7 +43,7 @@ div.special-text-field {
       padding-left: 1rem;
     }
   }
-  div.special-text-field-label:nth-child(2) +  div.special-text-field-textfield{
+  div.special-text-field-label:nth-child(2) + div.special-text-field-textfield {
     display: block;
 
     @media screen and (max-width: $phoneWidth) {
@@ -55,16 +55,16 @@ div.special-text-field {
   }
 
   div.special-text-field-textfield {
-    display: inline-block;     
+    display: inline-block;
     position: relative;
-    left: 90%;    
+    left: 90%;
     bottom: 8px;
     height: 100px;
-    transform: translateY(-30%);   
+    transform: translateY(-30%);
 
     @media screen and (max-width: $phoneWidth) {
       left: 30%;
-      transform: translateY(-20%);
+      transform: translateY(5%);
       width: 60vw;
     }
 
@@ -77,9 +77,6 @@ div.special-text-field {
       width: 250px;
       font-size: 17px;
       box-shadow: 0 0 0 1pt black;
-      
-
-      
 
       font-family: 'special-text-field-text-font';
     }
