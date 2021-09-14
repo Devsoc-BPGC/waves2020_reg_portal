@@ -20,7 +20,7 @@ div.registration-page-body {
   padding: var(--page-padding);
   padding-top: var(--page-top-padding);
 
-  background-color: #ff6df0;
+  background-color: #00FCDA;
 
   @media screen and (max-width: $phoneWidth) {
     width: var(--page-width-small);
@@ -51,6 +51,10 @@ div.registration-page-body {
     color: white;
     font-family: Circular;
     font-size: 3rem;
+<<<<<<< HEAD
+    background-color: #2E8B57;
+=======
     background-color: #2f0b4b;
+>>>>>>> 2c903cfb53c1fe9bd82594d4caf3b91c638395be
   }
 }
