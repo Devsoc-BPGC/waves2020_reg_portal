@@ -55,9 +55,12 @@ div.special-text-field {
   }
 
   div.special-text-field-textfield {
+    display: inline-block;     
     position: relative;
-    left: 60%;
-    transform: translateY(-30%);
+    left: 90%;    
+    bottom: 8px;
+    height: 100px;
+    transform: translateY(-30%);   
 
     @media screen and (max-width: $phoneWidth) {
       left: 30%;
@@ -66,11 +69,17 @@ div.special-text-field {
     }
 
     input {
+      display: inline-block;
       padding: 0.5rem;
       border: 0;
-      border-radius: 0.25rem;
+      border-radius: 0.95rem;
       background-color: #ebebfc;
-      width: inherit;
+      width: 250px;
+      font-size: 17px;
+      box-shadow: 0 0 0 1pt black;
+      
+
+      
 
       font-family: 'special-text-field-text-font';
     }

@@ -2,28 +2,30 @@
 @import './../../../components/scss/variables';
 @import './../../../fonts/Font.scss';
 
-$page-padding: 2rem;
-$page-padding-small: 1rem;
-$page-top-padding: 15rem;
-$page-top-padding-small: 7rem;
-$page-width: calc(100vw - $page-top-padding - $page-top-padding);
-$page-width-small: calc(
-  100vw - $page-top-padding-small - $page-top-padding-small
-);
+div.registration-page-body {
+  --page-padding: 2rem;
+  --page-padding-small: 1rem;
+  --page-top-padding: 15rem;
+  --page-top-padding-small: 7rem;
+  --page-width: calc(100% - var(--page-padding) - var(--page-padding));
+  --page-width-small: calc(
+    100% - var(--page-padding-small) - var(--page-padding-small)
+  );
+}
 
 div.registration-page-body {
   position: relative;
-  width: $page-width;
+  width: var(--page-width);
   min-height: 100vh;
-  padding: $page-padding;
-  padding-top: $page-top-padding;
+  padding: var(--page-padding);
+  padding-top: var(--page-top-padding);
 
   background-color: #00FCDA;
 
   @media screen and (max-width: $phoneWidth) {
-    width: $page-width-small;
-    padding: $page-padding-small;
-    padding-top: $page-top-padding-small;
+    width: var(--page-width-small);
+    padding: var(--page-padding-small);
+    padding-top: var(--page-top-padding-small);
   }
 
   div.registration-page-body-row {
@@ -44,11 +46,15 @@ div.registration-page-body {
       width: initial;
     }
   }
-  
+
   div.success-fail-alert {
     color: white;
     font-family: Circular;
     font-size: 3rem;
+<<<<<<< HEAD
     background-color: #2E8B57;
+=======
+    background-color: #2f0b4b;
+>>>>>>> 2c903cfb53c1fe9bd82594d4caf3b91c638395be
   }
 }
