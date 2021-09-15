@@ -8,7 +8,7 @@ $check-box-section-animation-duration: 0.3s;
 @keyframes anim-checkbox-section-switch-select {
   from {
     transform: translateX(0);
-    color: #00FCDA;
+    color: #aa7ee5;
   }
   to {
     transform: translateX(50%);
@@ -22,7 +22,7 @@ $check-box-section-animation-duration: 0.3s;
   }
   to {
     transform: translateX(0);
-    color: #00FCDA;
+    color: #aa7ee5;
   }
 }
 
@@ -39,10 +39,10 @@ div.checkbox-list-section {
       cursor: pointer;
       user-select: none;
 
-      background-color: #2E8B57;
+      background-color: #aa7ee5;
 
       span {
-        color: #00FCDA;
+        color: white;
         display: inline-block;
         transform: translateX(0);
         animation: anim-checkbox-section-switch-deselect
