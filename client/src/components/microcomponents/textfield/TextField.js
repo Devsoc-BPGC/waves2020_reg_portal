@@ -30,7 +30,7 @@ export default props => {
     <div className='special-text-field'>
       {specialTextFieldLabel1}
       {specialTextFieldLabel2}
-      <div className='special-text-field-textfield'>
+      <div className='special-text-field-textfield' data-inp={inputNameProp}>
         <input type='text' width={width} name={inputNameProp} />
       </div>
     </div>
