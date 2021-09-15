@@ -6,10 +6,10 @@ export default () => {
   return (
     <div className='footer'>
       <div className='top'>
-        <OutlineText color='#00fcda' text='DETAILS' size='700%' />
+        <OutlineText color='white' text='DETAILS' size='700%' />
         <div className='right'>
           <OutlineText
-            color='#00fcda'
+            color='white'
             text='WAVES21'
             size='175%'
             weight='0.75px'
@@ -19,8 +19,6 @@ export default () => {
       <div className='footer_info'>
         <div className='col'>
           <div className='head'>EVENTS:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
@@ -40,8 +38,6 @@ export default () => {
           <div className='head'>NAVIGATION:</div>
           <br />
           <br />
-          <br />
-          <br />
           <div className='list'>
             <div>HOME</div>
             <div>EVENTS</div>
@@ -51,8 +47,6 @@ export default () => {
         </div>
         <div className='col'>
           <div className='head'>LOCATION:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
@@ -66,6 +60,14 @@ export default () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='end'>
+        {' '}
+        Made with{' '}
+        <span role='img' aria-label='heart'>
+          ❤️
+        </span>{' '}
+        by DEVSOC
       </div>
     </div>
   );
