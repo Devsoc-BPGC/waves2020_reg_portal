@@ -18,7 +18,7 @@ export default function Login() {
   };
   return (
     <div className='loginMaster'>
-      <OutlineText text='LOGIN' color='#00fcda' size='5rem' weight='100' />
+      <OutlineText text='LOGIN' color='#ffffff' size='5rem' weight='100' />
 
       <div id='google'>
         <GoogleLogin

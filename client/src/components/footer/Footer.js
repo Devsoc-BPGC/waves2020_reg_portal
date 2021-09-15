@@ -21,8 +21,6 @@ export default () => {
           <div className='head'>EVENTS:</div>
           <br />
           <br />
-          <br />
-          <br />
           <div className='list'>
             <div>DANCE</div>
             <div>MUSIC</div>
@@ -40,8 +38,6 @@ export default () => {
           <div className='head'>NAVIGATION:</div>
           <br />
           <br />
-          <br />
-          <br />
           <div className='list'>
             <div>HOME</div>
             <div>EVENTS</div>
@@ -51,8 +47,6 @@ export default () => {
         </div>
         <div className='col'>
           <div className='head'>LOCATION:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
@@ -66,6 +60,14 @@ export default () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='end'>
+        {' '}
+        Made with{' '}
+        <span role='img' aria-label='heart'>
+          ❤️
+        </span>{' '}
+        by DEVSOC
       </div>
     </div>
   );

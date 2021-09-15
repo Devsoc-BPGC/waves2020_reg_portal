@@ -9,7 +9,12 @@ import CompleteButton from './completebutton/CompleteButton';
 
 export default () => {
   const radioButtonIds = ['Female', 'Male', 'Others'];
+  const inProcess = 1000;
+  const doneDuration = 1000;
+  const noteDuration = 13000;
+
   // advisory -- keep the names distinct
+
   const checkListItems = {
     MUSIC: [
       'Indian Rock',
@@ -99,14 +104,20 @@ export default () => {
         }
       });
     });
-
     if (sendDataToServer(data) === true) {
       setTimeout(() => {
         setDoneDivState('DONE!!');
-      }, 1000);
+      }, inProcess);
+      setTimeout(() => {
+        setDoneDivState(
+          `If you wish to make change to your registration, then you can reregister. 
+          Only the most recent registration data from your email will be considered.`
+        );
+      }, inProcess + doneDuration);
+
       setTimeout(() => {
         setRenderDiv(false);
-      }, 2000);
+      }, inProcess + doneDuration + noteDuration);
     } else {
       console.log('failed');
     }
