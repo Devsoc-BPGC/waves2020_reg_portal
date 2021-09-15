@@ -31,16 +31,15 @@ div.commonPageHeader {
 }
 
 .WavesLogo {
-  width: 320px;
-  height: 135px;
+  width: 280px;
+
   position: absolute;
   right: 20px;
 }
 
 @media screen and (max-width: 480px) {
   .WavesLogo {
-    width: 250px;
-    height: 100px;
+    width: 200px;
     position: relative;
     left: 50%;
     top: 50%;
