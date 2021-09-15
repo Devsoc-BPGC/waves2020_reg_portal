@@ -6,10 +6,10 @@ export default () => {
   return (
     <div className='footer'>
       <div className='top'>
-        <OutlineText color='#00fcda' text='DETAILS' size='700%' />
+        <OutlineText color='white' text='DETAILS' size='700%' />
         <div className='right'>
           <OutlineText
-            color='#00fcda'
+            color='white'
             text='WAVES21'
             size='175%'
             weight='0.75px'
