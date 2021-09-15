@@ -29,3 +29,21 @@ div.commonPageHeader {
     }
   }
 }
+
+.WavesLogo {
+  width: 320px;
+  height: 135px;
+  position: absolute;
+  right: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .WavesLogo {
+    width: 250px;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
