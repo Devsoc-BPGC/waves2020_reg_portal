@@ -57,6 +57,7 @@ export default () => {
       })
       .then(function (response) {
         console.log(response);
+        alert('Your Data has been saved');
       })
       .catch(function (error) {
         console.log(error);
