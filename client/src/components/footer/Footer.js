@@ -18,8 +18,6 @@ export default () => {
       </div>
       <div className='footer_info'>
         <div className='col'>
-          <br />
-          <br />
           <div className='head'>EVENTS:</div>
           <br />
           <br />
@@ -37,9 +35,6 @@ export default () => {
           </div>
         </div>
         <div className='col'>
-          <br />
-          <br />
-
           <div className='head'>NAVIGATION:</div>
           <br />
           <br />
@@ -51,9 +46,6 @@ export default () => {
           </div>
         </div>
         <div className='col'>
-          <br />
-          <br />
-
           <div className='head'>LOCATION:</div>
           <br />
           <br />
@@ -68,6 +60,14 @@ export default () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='end'>
+        {' '}
+        Made with{' '}
+        <span role='img' aria-label='heart'>
+          ❤️
+        </span>{' '}
+        by DEVSOC
       </div>
     </div>
   );
