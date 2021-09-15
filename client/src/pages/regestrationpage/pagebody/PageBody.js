@@ -20,7 +20,7 @@ export default () => {
     DANCE: ['Sizzle', 'Natyanjali'],
     'FASHION & DESIGN': ['Mix-n-Match', 'Makeup Art'],
     DRAMA: ['Hear Me Out', ' Radio Play'],
-    FINE_ARTS: ['Picturesque Pallette'],
+    'FINE ARTS': ['Picturesque Pallette'],
     'FILM AND PHOTOGRAPHY': ['Oh Snap!', 'Sho(r)t'],
     SPECIALS: ['Show Me The Funny', 'Mr And Mrs Waves', 'InVerse', 'Irshaad'],
   };
@@ -29,7 +29,7 @@ export default () => {
     'DANCE',
     'FASHION & DESIGN',
     'DRAMA',
-    'FINE_ARTS',
+    'FINE ARTS',
     'FILM AND PHOTOGRAPHY',
     'SPECIALS',
   ];
@@ -48,7 +48,7 @@ export default () => {
         selectedEvents: [
           ...data.MUSIC,
           ...data.DANCE,
-          ...data.FINE_ARTS,
+          ...data['FINE ARTS'],
           ...data['FASHION & DESIGN'],
           ...data.DRAMA,
           ...data.SPECIALS,
