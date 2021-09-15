@@ -18,9 +18,9 @@ export default () => {
       </div>
       <div className='footer_info'>
         <div className='col'>
+          <br />
+          <br />
           <div className='head'>EVENTS:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
@@ -37,9 +37,10 @@ export default () => {
           </div>
         </div>
         <div className='col'>
+          <br />
+          <br />
+
           <div className='head'>NAVIGATION:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
@@ -50,9 +51,10 @@ export default () => {
           </div>
         </div>
         <div className='col'>
+          <br />
+          <br />
+
           <div className='head'>LOCATION:</div>
-          <br />
-          <br />
           <br />
           <br />
           <div className='list'>
