@@ -82,4 +82,12 @@ div.special-text-field {
       font-family: 'special-text-field-text-font';
     }
   }
+
+  div.special-text-field-textfield[data-inp="NAME"] {
+      margin-left: -2rem;
+
+      @media screen and (max-width: $phoneWidth) {
+        margin-left: revert;
+      }
+  }
 }

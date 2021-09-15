@@ -157,7 +157,7 @@ export default () => {
         </div>
         <div>
           <TextField label='PHONE' labelNextLine='NUMBER' />
-          <CompleteButton onclick={register} />
+          <CompleteButton onclick={() => register()} />
         </div>
       </div>
       {renderDiv && <DoneDiv text={doneDivState} />}
