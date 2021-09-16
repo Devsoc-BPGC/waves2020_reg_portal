@@ -12,3 +12,18 @@ body {
 #google {
   margin-top: 5rem;
 }
+
+.WavesLogoLogin {
+  width: 400px;
+}
+
+@media screen and (max-width: 480px) {
+  .WavesLogoLogin {
+    width: 250px;
+    position: relative;
+  }
+}
+
+.WavesLogoDivLogin{
+  display: flex;
+}
