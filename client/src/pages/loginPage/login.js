@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import { useHistory } from 'react-router';
-import OutlineText from '../../components/microcomponents/OutlineText';
+// import OutlineText from '../../components/microcomponents/OutlineText';
 import WavesLogo from '../../imageassets/wavesLogoFull.png';
 import './login.css';
 
@@ -22,7 +22,7 @@ export default function Login() {
       <div className='WavesLogoDivLogin'>
         <img src={WavesLogo} alt='WavesLogoLogin' className='WavesLogoLogin' />
       </div>
-      <OutlineText text='LOGIN' color='#ffffff' size='5rem' weight='100' />
+      {/* <OutlineText text='LOGIN' color='#ffffff' size='5rem' weight='100' /> */}
       <div id='google'>
         <GoogleLogin
           className='aaa'
