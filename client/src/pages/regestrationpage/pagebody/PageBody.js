@@ -151,11 +151,7 @@ export default () => {
   );
 };
 
-function DoneDiv(props) {
+const DoneDiv = props => {
   const { text } = props;
-  return (
-    <div className='registration-page-body-row'>
-      <div className='success-fail-alert'>{text}</div>
-    </div>
-  );
-}
+  return <div className='success-fail-alert'>{text}</div>;
+};
