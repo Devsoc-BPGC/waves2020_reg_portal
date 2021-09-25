@@ -13,7 +13,7 @@ export default props => {
       onClick={onclick}
       role='button'
       tabIndex='0'
-      onKeyDown={onclick}
+      onKeyDown={() => {}}
     >
       <div /> {/* background */}
       <div>
