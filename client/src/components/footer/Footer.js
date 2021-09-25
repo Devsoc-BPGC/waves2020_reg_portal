@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import OutlineText from '../microcomponents/OutlineText';
+import { Link } from 'react-router-dom';
 
 export default () => {
   return (
@@ -22,16 +23,56 @@ export default () => {
           <br />
           <br />
           <div className='list'>
-            <div>DANCE</div>
-            <div>MUSIC</div>
-            <div>DRAMA</div>
-            <div>FASHION</div>
-            <div>FINE ARTS</div>
-            <div>CARPE DICTUM</div>
-            <div>DESIGN</div>
-            <div>QUIZ</div>
-            <div>PHOTOGRAPHY</div>
-            <div>SPECIALS</div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                DANCE
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                MUSIC
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                DRAMA
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                FASHION
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                FINE ARTS
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                CARPE DICTUM
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                DESIGN
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                QUIZ
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                PHOTOGRAPHY
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                SPECIALS
+              </Link>
+            </div>
           </div>
         </div>
         <div className='col'>
@@ -39,10 +80,26 @@ export default () => {
           <br />
           <br />
           <div className='list'>
-            <div>HOME</div>
-            <div>EVENTS</div>
-            <div>REGISTER</div>
-            <div>CONTACT</div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                HOME
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                EVENTS
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                REGISTER
+              </Link>
+            </div>
+            <div>
+              <Link to='/construction' className='footer__links'>
+                CONTACT
+              </Link>
+            </div>
           </div>
         </div>
         <div className='col'>
