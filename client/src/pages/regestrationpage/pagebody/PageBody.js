@@ -8,9 +8,14 @@ import CheckBoxList from '../../../components/microcomponents/checkboxlist/Check
 import CompleteButton from './completebutton/CompleteButton';
 
 export default () => {
+  const [doneDivState, setDoneDivState] = useState(
+    'Please wait, registration is under process.'
+  );
+  const [renderDiv, setRenderDiv] = useState(false);
+  const [timeoutQueue, setTimeoutQueue] = useState([]);
+
   const radioButtonIds = ['Female', 'Male', 'Others'];
-  const inProcess = 1000;
-  const doneDuration = 1000;
+  const doneDuration = 5000;
   const noteDuration = 13000;
 
   // advisory -- keep the names distinct
@@ -34,9 +39,10 @@ export default () => {
     'SPECIALS',
   ];
 
-  function sendDataToServer(data) {
-    console.log(data);
-    axios
+  const sendDataToServer = async data => {
+    let success = true;
+
+    await axios
       .post('https://murmuring-inlet-28815.herokuapp.com/register', {
         college: data.COLLEGE,
         name: data.NAME,
@@ -55,32 +61,42 @@ export default () => {
           ...data['FILM AND PHOTOGRAPHY'],
         ],
       })
-      .then(function (response) {
+      .then(response => {
+        success = true;
         console.log(response);
-        alert('Your Data has been saved');
       })
-      .catch(function (error) {
+      .catch(error => {
+        success = false;
         console.log(error);
       });
 
-    // TODO: add the code to send the data
-    let success = true;
-    // code -> manage success accordingly
-    if (data === 'undefined') success = false;
+    if (data == null) success = false;
 
     return success;
-  }
-  const [doneDivState, setDoneDivState] = useState('UNDER PROCESS');
-  const [renderDiv, setRenderDiv] = useState(false);
-  function register() {
+  };
+
+  const register = () => {
+    // clear any previous pending timeouts
+    try {
+      timeoutQueue.forEach(timeoutID => clearTimeout(timeoutID));
+    } catch (e) {
+      console.log(e);
+    }
+    setTimeoutQueue([]);
+
+    // reset the message box and show initial message
+    setDoneDivState('Please wait, registration is under process.');
     setRenderDiv(true);
+
+    // start data collection
     const data = {};
 
     document.querySelectorAll('input[type=text]').forEach(element => {
       data[element.name] = element.value;
     });
 
-    data.GENDER = document.querySelector('input[type=radio]:checked').value;
+    data.GENDER = document.querySelector('input[type=radio]:checked')?.value;
+    if (data.GENDER !== true) data.GENDER = 'Others';
 
     checkListHeaders.forEach(header => {
       data[header] = [];
@@ -90,24 +106,82 @@ export default () => {
         }
       });
     });
-    if (sendDataToServer(data) === true) {
-      setTimeout(() => {
-        setDoneDivState('DONE!!');
-      }, inProcess);
-      setTimeout(() => {
-        setDoneDivState(
-          `If you wish to make change to your registration, then you can reregister. 
-          Only the most recent registration data from your email will be considered.`
-        );
-      }, inProcess + doneDuration);
 
-      setTimeout(() => {
-        setRenderDiv(false);
-      }, inProcess + doneDuration + noteDuration);
-    } else {
-      console.log('failed');
-    }
-  }
+    sendDataToServer(data)
+      .then(res => {
+        if (res === true) {
+          // setup timeout message IDs
+          let messageTimeoutID = -1;
+          let revertTimeoutID = -1;
+
+          // give messages
+
+          setRenderDiv(true);
+          setDoneDivState('Successfully registered.');
+          messageTimeoutID = setTimeout(() => {
+            setDoneDivState(
+              `If you wish to make change to your registration, then you can reregister. ` +
+                `Only the most recent registration data from your email will be considered.`
+            );
+          }, doneDuration);
+
+          // after the messages are given, we revert the message box to original state
+          revertTimeoutID = setTimeout(() => {
+            setTimeout(() => {
+              setDoneDivState('Please wait, registration is under process.');
+              setRenderDiv(false);
+            }, doneDuration + noteDuration);
+          });
+
+          // add the timeoutIDs to the timeoutQueue
+          setTimeoutQueue(thisTimeoutQueue => {
+            thisTimeoutQueue.push(messageTimeoutID);
+            thisTimeoutQueue.push(revertTimeoutID);
+          });
+        } else {
+          // show error message
+          setRenderDiv(true);
+          setDoneDivState(
+            'Error in registration. Please check your network connection.'
+          );
+          let revertTimeoutID = -1;
+
+          // after the messages are given, we revert the message box to original state
+          revertTimeoutID = setTimeout(() => {
+            setDoneDivState('Please wait, registration is under process.');
+            setRenderDiv(false);
+          }, doneDuration);
+
+          // add the timeoutIDs to the timeoutQueue
+          setTimeoutQueue(thisTimeoutQueue => {
+            thisTimeoutQueue.push(revertTimeoutID);
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+
+        // below code is same as `else` section of the `if` block in the above `then` block
+
+        // show error message
+        setRenderDiv(true);
+        setDoneDivState(
+          'Error in registration. Please check your network connection.'
+        );
+        let revertTimeoutID = -1;
+
+        // after the messages are given, we revert the message box to original state
+        revertTimeoutID = setTimeout(() => {
+          setDoneDivState('Please wait, registration is under process.');
+          setRenderDiv(false);
+        }, doneDuration);
+
+        // add the timeoutIDs to the timeoutQueue
+        setTimeoutQueue(thisTimeoutQueue => {
+          thisTimeoutQueue.push(revertTimeoutID);
+        });
+      });
+  };
 
   return (
     <div className='registration-page-body'>
@@ -144,9 +218,9 @@ export default () => {
         <div>
           <TextField label='PHONE' labelNextLine='NUMBER' />
           <CompleteButton onclick={() => register()} />
+          {renderDiv && <DoneDiv text={doneDivState} />}
         </div>
       </div>
-      {renderDiv && <DoneDiv text={doneDivState} />}
     </div>
   );
 };
