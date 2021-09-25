@@ -73,7 +73,7 @@ div.special-text-field {
       padding: 0.5rem;
       border: 0;
       border-radius: 0.95rem;
-      background-color: #ebebfc;
+      background-color: #ffffff;
       width: 250px;
       font-size: 17px;
       box-shadow: 0 0 0 1pt #aa7ee5;
@@ -81,5 +81,13 @@ div.special-text-field {
 
       font-family: 'special-text-field-text-font';
     }
+  }
+
+  div.special-text-field-textfield[data-inp="NAME"] {
+      margin-left: -2rem;
+
+      @media screen and (max-width: $phoneWidth) {
+        margin-left: revert;
+      }
   }
 }

@@ -16,33 +16,21 @@ export default () => {
   // advisory -- keep the names distinct
 
   const checkListItems = {
-    MUSIC: [
-      'Indian Rock',
-      'Jukebox',
-      'Solonote',
-      'Rapsody',
-      'Silence of the Amps',
-    ],
-    DANCE: ['Natyanlaji', 'test1', 'test2', 'test3', 'test4'],
-    FASHION: ['test5', 'test6', 'test7', 'test8'],
-    DRAMA: ['test12', 'test11', 'test10', 'test9'],
-    FINE_ARTS: ['test13', 'test14', 'test15', 'test16'],
-    DESIGN: ['test20', 'test19', 'test18', 'test17'],
-    CARPE_DICTUM: ['test21', 'test22', 'test23', 'test24'],
-    QUIZ: ['test28', 'test27', 'test26', 'test25'],
-    PHOTOGRAPHY: ['test29', 'test30', 'test31', 'test32'],
-    SPECIALS: ['test36', 'test35', 'test34', 'test33'],
+    MUSIC: ['Jukebox- Hindi', 'Jukebox- English', 'Reverb', 'Rapsody'],
+    DANCE: ['Sizzle', 'Natyanjali'],
+    'FASHION & DESIGN': ['Mix-n-Match', 'Makeup Art'],
+    DRAMA: ['Hear Me Out', ' Radio Play'],
+    'FINE ARTS': ['Picturesque Pallette'],
+    'FILM AND PHOTOGRAPHY': ['Oh Snap!', 'Sho(r)t'],
+    SPECIALS: ['Show Me The Funny', 'Mr And Mrs Waves', 'InVerse', 'Irshaad'],
   };
   const checkListHeaders = [
     'MUSIC',
     'DANCE',
-    'FASHION',
+    'FASHION & DESIGN',
     'DRAMA',
-    'FINE_ARTS',
-    'DESIGN',
-    'CARPE_DICTUM',
-    'QUIZ',
-    'PHOTOGRAPHY',
+    'FINE ARTS',
+    'FILM AND PHOTOGRAPHY',
     'SPECIALS',
   ];
 
@@ -60,18 +48,16 @@ export default () => {
         selectedEvents: [
           ...data.MUSIC,
           ...data.DANCE,
-          ...data.FINE_ARTS,
-          ...data.CARPE_DICTUM,
-          ...data.FASHION,
+          ...data['FINE ARTS'],
+          ...data['FASHION & DESIGN'],
           ...data.DRAMA,
-          ...data.DESIGN,
           ...data.SPECIALS,
-          ...data.QUIZ,
-          ...data.PHOTOGRAPHY,
+          ...data['FILM AND PHOTOGRAPHY'],
         ],
       })
       .then(function (response) {
         console.log(response);
+        alert('Your Data has been saved');
       })
       .catch(function (error) {
         console.log(error);
@@ -157,7 +143,7 @@ export default () => {
         </div>
         <div>
           <TextField label='PHONE' labelNextLine='NUMBER' />
-          <CompleteButton onclick={register} />
+          <CompleteButton onclick={() => register()} />
         </div>
       </div>
       {renderDiv && <DoneDiv text={doneDivState} />}
