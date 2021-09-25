@@ -36,25 +36,25 @@
 }
 
 div.registration-page-complete-button {
-  position: absolute;
+  position: relative;
   width: -webkit-fit-content;
   width: fit-content;
   cursor: pointer;
 
   top: 50%;
-  left: 75%;
+  left: 50%;
+  margin-top: 20%;
   transform: translate(-50%, -50%);
 
   animation: anim-registration-page-complete-button-frame-out 0.3s ease;
 
   @media screen and (max-width: $phoneWidth) {
-    position: relative;
-    margin-top: 10rem;
+    // position: relative;
+    // margin-top: 10rem;
     // float: right;
     width: -webkit-fit-content;
     width: fit-content;
-    left: 50%;
-    // transform: translateY(-50%);
+    left: 42.5%;
   }
 
   > div:nth-child(1) {

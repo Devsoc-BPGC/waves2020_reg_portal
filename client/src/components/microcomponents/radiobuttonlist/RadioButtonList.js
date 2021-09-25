@@ -9,12 +9,8 @@ export default props => {
   // const width = props.width;
   const { groupName } = props;
   const { idList } = props;
-  const radioList = idList.map(function (id) {
+  const radioList = idList.map(id => {
     return (
-      // <div key={id}>
-      //     <input type="radio" width={width} name={groupName} id={id} value={id} />
-      //     <label htmlFor={id}>{id}</label>
-      // </div>
       <div key={id}>
         <RadioButton text={id} group={groupName} id={id} />
       </div>
