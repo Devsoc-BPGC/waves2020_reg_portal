@@ -2,69 +2,71 @@
 @import './../scss/variables';
 
 .footer {
+  position: relative;
+  bottom: 0;
+  padding: 2%;
+  padding-top: 4%;
+  background-color: #aa7ee5;
+  width: 96%;
+
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .right {
+      margin-right: 5%;
+      padding-top: 2%;
+    }
+  }
+
+  .footer_info {
+    display: flex;
+    flex-direction: row;
     position: relative;
-    bottom: 0;
+    // margin-top: -3.25%;
+    left: 1%;
     padding: 2%;
-    padding-top: 4%;
-    background-color: #aa7ee5;
-    width: 96%;
 
-    .top {
+    .col {
+      color: white;
+      font-family: 'Circular';
+      font-style: italic;
+      margin-right: 9%;
+      margin-left: 2%;
+
+      .head {
+        font-weight: 900;
+        font-size: 24px;
+      }
+
+      .list {
+        font-size: 16px;
+        line-height: 20px;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
 
-        .right {
-            margin-right: 5%;
-            padding-top: 2%;
+        div {
+          overflow: hidden;
+          padding-bottom: 7%;
         }
+      }
     }
+  }
+  .end {
+    color: white;
+    font-family: 'Circular';
+    font-style: italic;
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
+  }
 
+  .footer__links {
+    text-decoration: none;
+    color: white;
+  }
 
-    .footer_info {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        // margin-top: -3.25%;
-        left: 1%;
-        padding: 2%;
-
-
-        .col {
-            color: white;
-            font-family: 'Circular';
-            font-style: italic;
-            margin-right: 9%;
-            margin-left: 2%;
-
-            .head {
-                font-weight: 900;
-                font-size: 24px;
-            }
-
-            .list {
-                font-size: 16px;
-                line-height: 20px;
-                width: 100%;
-
-
-                div {
-                    overflow: hidden;
-                    padding-bottom: 7%;
-                }
-            }
-        }
-    }
-    .end{
-        color: white;
-        font-family: 'Circular';
-        font-style: italic;
-        text-align: center;
-        font-size: 20px;
-        line-height: 25px;
-
-    }
-    @media screen and (max-width: $phoneWidth) {
-        display: none;
-    }
+  @media screen and (max-width: $phoneWidth) {
+    display: none;
+  }
 }
