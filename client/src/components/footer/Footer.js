@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
-import OutlineText from '../microcomponents/OutlineText';
 import { Link } from 'react-router-dom';
+import OutlineText from '../microcomponents/OutlineText';
 
 export default () => {
   return (
@@ -118,14 +118,14 @@ export default () => {
           </div>
         </div>
       </div>
-      <div className='end'>
+      {/* <div className='end'>
         {' '}
         Made with{' '}
         <span role='img' aria-label='heart'>
           ❤️
         </span>{' '}
         by DEVSOC
-      </div>
+      </div> */}
     </div>
   );
 };
